@@ -1081,11 +1081,13 @@
   document.addEventListener("click", function(e) {
     const navBtn = e.target.closest("[data-nav]");
     if (navBtn) { navigateTo(navBtn.getAttribute("data-nav")); return; }
-    const toggle = e.target.closest("[data-toggle]");
+        const toggle = e.target.closest("[data-toggle]");
     if (toggle) {
       const key = toggle.getAttribute("data-toggle");
       state.settings[key] = !state.settings[key];
-      renderPage();
+      const on = state.settings[key];
+      toggle.style.background = on ? "#FF7A59" : "rgba(255,122,89,0.16)";
+      toggle.querySelector(".toggle-knob").style.left = on ? "20px" : "3px";
       return;
     }
   });

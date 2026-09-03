@@ -303,9 +303,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .rider-card{
   background:var(--card);border-radius:var(--radius-md);padding:32px;border:1px solid var(--line);
   border-left:3px solid var(--amber);
+  display:flex;flex-direction:column;
 }
 .rider-quote{font-size:.98rem;color:var(--ink);line-height:1.65;margin-bottom:24px;}
-.rider-footer{display:flex;align-items:center;gap:14px;}
+.rider-footer{display:flex;align-items:center;gap:14px;margin-top:auto;}
 .rider-footer img{width:44px;height:44px;border-radius:50%;object-fit:cover;filter:saturate(.85);}
 .rider-footer h4{font-size:.9rem;font-weight:700;font-family:var(--font-display);}
 .rider-footer p{font-size:.74rem;color:var(--ink-soft);font-family:var(--font-mono);margin-top:2px;}

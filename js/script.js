@@ -10,19 +10,11 @@ if ('scrollRestoration' in history) {
 }
 window.scrollTo(0, 0);
 window.addEventListener('pageshow', (event) => {
-  // event.persisted === true means the page was restored from
-  // the back/forward cache rather than freshly loaded — in that
-  // case, leave the user's scroll position alone.
   if (!event.persisted) {
     window.scrollTo(0, 0);
   }
 });
 
-/* =========================================================
-   Preloader — runs immediately, independent of DOMContentLoaded.
-   Fires 'stackly:ready' once removed so the hero sequence starts
-   exactly when the page becomes visible.
-   ========================================================= */
 (function () {
   const loader = document.getElementById('boardPreloader');
   const MIN_VISIBLE_MS = 850;
@@ -59,7 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const hasGSAP = typeof window.gsap !== 'undefined';
 
-  /* ---------- One orchestrated hero entrance ---------- */
   function playHeroIntro() {
     const heroEls = $$('[data-hero-el]');
     if (!heroEls.length) return;
@@ -75,7 +66,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   document.addEventListener('stackly:ready', playHeroIntro);
 
-  /* ---------- Navbar entrance + mobile menu ---------- */
   const navbarWrapper = $('#navbar-wrapper');
   const hamburgerBtn  = $('#nav-menu-hamburger');
   const navLinksPanel = $('#main-nav-links');
@@ -112,7 +102,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMobileMenu(); });
 
-  /* ---------- Scroll reveal: section headers + every card grid, staggered ---------- */
   const revealGroups = [
     '.stats-card', '.route-photo-row', '.cta-card',
     '.section-header',
@@ -141,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function () {
     $$('[data-reveal]').forEach(el => el.classList.add('is-visible'));
   }
 
-  /* ---------- Hero background parallax ---------- */
   const heroGridBg = $('.hero-grid-bg');
   const heroSection = $('.hero-section');
   if (heroGridBg && heroSection && !prefersReducedMotion) {
@@ -152,7 +140,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  /* ---------- FAQ accordion ---------- */
   $$('.faq-item').forEach(item => {
     const btn = item.querySelector('.faq-question');
     const answer = item.querySelector('.faq-answer');
@@ -172,17 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  /* ---------- Back to top ----------
-     Fixed at a constant distance from the bottom of the viewport by
-     default, but that means once the user scrolls far enough to see
-     the footer, the button sits on top of the footer content (it
-     overlapped the social icons row). To avoid that, as the footer's
-     top edge creeps up into the viewport we push the button up by
-     exactly that amount, so it always rests just above the footer. */
   const backToTop = $('#back-to-top');
   const siteFooter = $('.site-footer');
   if (backToTop) {
-    const baseOffset = () => (window.innerWidth <= 860 ? 16 : 24); // matches CSS bottom value
+    const baseOffset = () => (window.innerWidth <= 860 ? 16 : 24);
     function updateBackToTop() {
       backToTop.classList.toggle('visible', window.scrollY > 700);
       if (siteFooter) {
@@ -197,7 +177,6 @@ document.addEventListener('DOMContentLoaded', function () {
     backToTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' }));
   }
 
-  /* ---------- Navbar shadow deepens on scroll ---------- */
   const navPill = $('.navbar-pill');
   if (navPill) {
     window.addEventListener('scroll', () => {
@@ -207,7 +186,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
-  /* ---------- Scroll progress (nav active-state is click-driven only, see click handler above) ---------- */
   const progressBar = $('#page-scroll-indicator');
 
   function updateScrollProgress() {
@@ -226,7 +204,6 @@ document.addEventListener('DOMContentLoaded', function () {
   }, { passive: true });
   updateScrollProgress();
 
-  /* ---------- Stat counters ---------- */
   const statNumbers = $$('.stat-number');
   const statsCard = $('#statsCard');
 
@@ -262,7 +239,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  /* ---------- Live IST clock on hero board ---------- */
   const heroClock = $('#hero-clock');
   function updateClock() {
     if (!heroClock) return;
@@ -275,7 +251,6 @@ document.addEventListener('DOMContentLoaded', function () {
   updateClock();
   setInterval(updateClock, 30000);
 
-  /* ---------- Enquiry / contact form ---------- */
   const contactForm = $('#contact-form');
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
