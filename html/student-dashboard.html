@@ -1106,6 +1106,7 @@
   document.addEventListener("change", function(e) {
     if (e.target && e.target.id === "lang-select") {
       state.settings.language = e.target.value;
+      go404();
     }
   });
 
