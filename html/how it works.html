@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — Stackly</title>
+<meta name="description" content="How a Stackly cohort actually runs: the weekly rhythm, the live platform, the mentorship model, how work gets assessed, and the support system behind every rider from enrollment to placement.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/how-it-works.css">
+</head>
+<body>
+
+<div class="scroll-progress-container"><div class="scroll-progress-bar" id="page-scroll-indicator"></div></div>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <div class="navbar-pill">
+      <a href="index.html#home" class="navbar-brand" aria-label="Stackly — Home">
+        <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img">
+      </a>
+
+      <nav class="navbar-links" id="main-nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="tracks.html" class="nav-item">Tracks</a>
+        <a href="how-it-works.html" class="nav-item active">How it works</a>
+        <a href="./faculty.html" class="nav-item">Faculty</a>
+        <a href="./outcomes.html" class="nav-item">Outcomes</a>
+        <a href="./contact.html" class="nav-item">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="./login.html" class="btn-book-mobile">Book a seat</a>
+        </div>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="./login.html" class="btn-book">Book a seat</a>
+        <button class="menu-hamburger" id="nav-menu-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 1. Page hero ===== -->
+  <section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="../assets/A36.webp" alt="">
+    </div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="eyebrow light">THE JOURNEY</span>
+      <h1 class="section-heading light">How a cohort actually runs, start to finish</h1>
+      <p class="section-sub light">Not a syllabus PDF — the real operating rhythm: what a week looks like, who's reviewing your work, how you're assessed, and who's there when you're stuck at 11pm.</p>
+      <div class="hero-buttons">
+        <a href="#rhythm" class="btn-solid">See a typical week</a>
+        <a href="tracks.html#compare" class="btn-outline">Compare tracks instead</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sticky in-page sub-navigation ===== -->
+  <div class="subnav-wrap" id="subnav-wrap">
+    <nav class="subnav" id="subnav" aria-label="On this page">
+      <a href="#overview" class="subnav-pill">Overview</a>
+      <a href="#rhythm" class="subnav-pill">Rhythm</a>
+      <a href="#platform" class="subnav-pill">Platform</a>
+      <a href="#mentorship" class="subnav-pill">Mentorship</a>
+      <a href="#assessment" class="subnav-pill">Assessment</a>
+      <a href="#support" class="subnav-pill">Support</a>
+      <a href="#faq" class="subnav-pill">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- ===== 2. Overview / operating model ===== -->
+  <section class="overview-section" id="overview">
+    <div class="section-inner">
+      <div class="route-photo-row">
+        <img src="../assets/A34.webp" alt="Riders working through a live project during a Stackly session">
+        <div class="route-photo-note">
+          <p>"We didn't design a course. We designed a week you repeat twelve to twenty-eight times, each one slightly harder than the last."</p>
+          <span>— Stackly curriculum team</span>
+        </div>
+      </div>
+
+      <div class="overview-stats">
+        <div class="overview-stat">
+          <span class="overview-stat-num">3</span>
+          <p>Live touchpoints with a mentor or instructor every single week</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">1:12</span>
+          <p>Mentor-to-rider ratio during project review sessions</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">48h</span>
+          <p>Maximum time before a submitted checkpoint gets written feedback</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Journey timeline (scroll-linked fill line) ===== -->
+  <section class="journey-section" id="journey">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">END TO END</span>
+        <h2 class="section-heading">Six stages, one continuous line</h2>
+        <p class="section-sub">Scroll through it the way a rider actually moves through it — nothing here happens out of order.</p>
+      </div>
+
+      <div class="journey-body">
+        <div class="journey-track-wrap" aria-hidden="true">
+          <div class="journey-track"></div>
+          <div class="journey-fill" id="journey-fill"></div>
+        </div>
+
+        <div class="journey-steps">
+          <div class="journey-step">
+            <span class="journey-step-num">1</span>
+            <div class="journey-step-body">
+              <h3>Enrollment &amp; orientation</h3>
+              <p>You get platform access, a pre-reading pack, and a 15-minute call with your cohort coordinator a week before Day 1 — so the first live session isn't the first time you've logged in.</p>
+            </div>
+          </div>
+          <div class="journey-step">
+            <span class="journey-step-num">2</span>
+            <div class="journey-step-body">
+              <h3>Foundations sprint</h3>
+              <p>The first two to four weeks level the cohort. Whether you walked in cold or already knew half the tools, everyone leaves this sprint able to build the same starter project unassisted.</p>
+            </div>
+          </div>
+          <div class="journey-step">
+            <span class="journey-step-num">3</span>
+            <div class="journey-step-body">
+              <h3>Guided build cycles</h3>
+              <p>The bulk of the track: two-week cycles, each ending in a working feature or artifact, reviewed the way a senior teammate reviews a pull request — line by line, not just pass or fail.</p>
+            </div>
+          </div>
+          <div class="journey-step">
+            <span class="journey-step-num">4</span>
+            <div class="journey-step-body">
+              <h3>Specialization sprint</h3>
+              <p>You pick one elective lane inside your track and pair with a mentor who works in that specialty today, not one who taught it five years ago.</p>
+            </div>
+          </div>
+          <div class="journey-step">
+            <span class="journey-step-num">5</span>
+            <div class="journey-step-body">
+              <h3>Capstone &amp; panel review</h3>
+              <p>One substantial build, presented live to a three-person panel that includes at least one hiring partner. You defend your decisions, not just demo the output.</p>
+            </div>
+          </div>
+          <div class="journey-step">
+            <span class="journey-step-num">6</span>
+            <div class="journey-step-body">
+              <h3>Alumni &amp; placement support</h3>
+              <p>Cohort access doesn't end at graduation. Resume reviews, mock interviews, and referrals into the hiring-partner network continue for twelve months after your capstone.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Weekly rhythm ===== -->
+  <section class="rhythm-section" id="rhythm">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">THE WEEKLY SHAPE</span>
+        <h2 class="section-heading">What an ordinary week actually looks like</h2>
+        <p class="section-sub">The topic changes every cycle. This shape doesn't — it's the same five days from week one to your capstone.</p>
+      </div>
+
+      <div class="rhythm-grid">
+        <div class="rhythm-day tilt-card">
+          <span class="rhythm-day-tag">MON</span>
+          <h3>Live session</h3>
+          <p>90-minute instructor-led walkthrough of the week's core concept, recorded and posted within a few hours for anyone who couldn't attend live.</p>
+        </div>
+        <div class="rhythm-day tilt-card">
+          <span class="rhythm-day-tag">TUE–WED</span>
+          <h3>Build block</h3>
+          <p>Self-paced project work in the sandbox environment, with two mentor office hours open for anyone stuck on a specific problem.</p>
+        </div>
+        <div class="rhythm-day tilt-card">
+          <span class="rhythm-day-tag">THU</span>
+          <h3>Peer review</h3>
+          <p>Small groups of four exchange in-progress work and give structured feedback before anything reaches a mentor — most bugs get caught here first.</p>
+        </div>
+        <div class="rhythm-day tilt-card">
+          <span class="rhythm-day-tag">FRI</span>
+          <h3>Checkpoint</h3>
+          <p>You submit the week's build. A mentor reviews it against a written rubric within 48 hours, with inline comments, not just a score.</p>
+        </div>
+        <div class="rhythm-day tilt-card">
+          <span class="rhythm-day-tag">ONGOING</span>
+          <h3>Async support</h3>
+          <p>The cohort channel stays open around the clock — most questions posted before midnight get a peer or mentor reply before you're back online.</p>
+        </div>
+      </div>
+
+      <div class="rhythm-gallery">
+        <div class="rhythm-gallery-item">
+          <img src="../assets/b2.webp" alt="Mentor and rider reviewing a project together during office hours">
+          <p>Office hours run twice a week — dropping in is optional, but most riders use at least one.</p>
+        </div>
+        <div class="rhythm-gallery-item">
+          <img src="../assets/h7.webp" alt="Code editor open during a Friday checkpoint submission">
+          <p>Friday checkpoints are submitted straight from the platform — no separate tools or file uploads to manage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Live platform ===== -->
+  <section class="platform-features-section" id="platform">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">ON THE PLATFORM</span>
+        <h2 class="section-heading">One login, everything you actually need</h2>
+        <p class="section-sub">No juggling five separate tools for video, code, feedback, and community — it's one platform end to end.</p>
+      </div>
+
+      <div class="capability-grid">
+        <div class="capability-card">
+          <span class="capability-icon"><i class="fa-solid fa-video"></i></span>
+          <h3>Live sessions, always recorded</h3>
+          <p>Every live session is posted with searchable timestamps within a few hours, so missing one never means missing the material.</p>
+        </div>
+        <div class="capability-card">
+          <span class="capability-icon"><i class="fa-solid fa-flask"></i></span>
+          <h3>In-browser sandbox labs</h3>
+          <p>Track-specific environments — a code editor, a Jupyter workspace, or an AWS sandbox — pre-configured so you're building in minutes, not fighting local setup.</p>
+        </div>
+        <div class="capability-card">
+          <span class="capability-icon"><i class="fa-solid fa-comments"></i></span>
+          <h3>Cohort community</h3>
+          <p>A dedicated channel per cohort and per track elective, moderated by mentors, where async questions rarely sit unanswered overnight.</p>
+        </div>
+        <div class="capability-card">
+          <span class="capability-icon"><i class="fa-solid fa-chart-simple"></i></span>
+          <h3>Progress &amp; rubric tracker</h3>
+          <p>Every checkpoint, rubric score, and mentor comment lives in one timeline, so you always know exactly where you stand against the track's benchmarks.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Mentorship model ===== -->
+  <section class="mentorship-section" id="mentorship">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHO'S ACTUALLY REVIEWING YOUR WORK</span>
+        <h2 class="section-heading">Mentors who work the job today, not the job a decade ago</h2>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-media">
+          <img src="../assets/l19.webp" alt="Portrait of a Stackly mentor at their desk">
+        </div>
+        <div>
+          <p class="mentor-quote">"I don't grade like a teacher. I review like the senior engineer I actually am — if I wouldn't approve this in a real pull request, I don't approve it here either."</p>
+          <p class="mentor-name">Priya Ramesh</p>
+          <p class="mentor-role">Staff Data Scientist, Cortex Analytics · Mentors DS‑310</p>
+        </div>
+      </div>
+
+      <div class="mentorship-notes">
+        <div class="mentorship-note">
+          <i class="fa-solid fa-user-check"></i>
+          <p>Every mentor is currently working in the field they teach — not a former practitioner, a current one.</p>
+        </div>
+        <div class="mentorship-note">
+          <i class="fa-solid fa-repeat"></i>
+          <p>You keep the same primary mentor for the full track, so feedback compounds instead of resetting each cycle.</p>
+        </div>
+        <div class="mentorship-note">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <p>A second mentor independently reviews every capstone, so no single opinion decides whether you're ready.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Assessment & feedback ===== -->
+  <section class="assessment-section" id="assessment">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow light">HOW WORK GETS JUDGED</span>
+        <h2 class="section-heading light">Assessment that mirrors the job, not an exam hall</h2>
+        <p class="section-sub light">No multiple-choice finals. Every checkpoint is judged the way your work will actually be judged once you're hired.</p>
+      </div>
+
+      <div class="assessment-grid">
+        <div class="assessment-card">
+          <span class="assessment-tag">Weekly</span>
+          <h3>Rubric-scored checkpoints</h3>
+          <p>Each build is scored against a written rubric shared with you in advance — no surprise criteria, no moving goalposts.</p>
+        </div>
+        <div class="assessment-card">
+          <span class="assessment-tag">Per cycle</span>
+          <h3>Mentor code &amp; work review</h3>
+          <p>Line-by-line comments on your actual submission, the same review style used on a real engineering or analytics team.</p>
+        </div>
+        <div class="assessment-card">
+          <span class="assessment-tag">Once</span>
+          <h3>Capstone panel defense</h3>
+          <p>You present and answer live questions from a three-person panel — assessing not just what you built, but why you built it that way.</p>
+        </div>
+        <div class="assessment-card">
+          <span class="assessment-tag">As needed</span>
+          <h3>Guided catch-up weeks</h3>
+          <p>Miss a checkpoint's bar and you get one structured catch-up week with extra mentor time before the cohort moves on without you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. Support system ===== -->
+  <section class="support-section" id="support">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHO'S THERE WHEN YOU'RE STUCK</span>
+        <h2 class="section-heading">Support built for the 11pm problem, not just office hours</h2>
+        <p class="section-sub">Most learning platforms assume you'll only get stuck during business hours. Ours doesn't.</p>
+      </div>
+
+      <div class="support-grid">
+        <div class="support-card">
+          <span class="support-tag">Fastest</span>
+          <span class="support-icon"><i class="fa-solid fa-people-group"></i></span>
+          <h3>Peer cohort channel</h3>
+          <p>Most technical questions get a peer reply within the hour — you're rarely the only one stuck on the same bug.</p>
+        </div>
+        <div class="support-card">
+          <span class="support-icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+          <h3>Mentor office hours</h3>
+          <p>Two scheduled sessions a week per track, plus async questions answered within 48 hours outside of live hours.</p>
+        </div>
+        <div class="support-card">
+          <span class="support-icon"><i class="fa-solid fa-briefcase"></i></span>
+          <h3>Career coaching</h3>
+          <p>One-on-one resume reviews and mock interviews open from your specialization sprint onward, not just after graduation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BEFORE YOU ENROLL</span>
+        <h2 class="section-heading">Questions about how it runs</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How much of this is actually live versus recorded?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>One live instructor session a week is core to every track, plus scheduled mentor office hours. Everything live is recorded, but the checkpoint reviews, peer feedback, and community support happen in real time regardless of whether you attend live.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if I fall behind for a week?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You get one guided catch-up week with extra mentor time before the cohort schedule moves on. It's built into every track — falling behind once isn't treated as failing the program.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need my own laptop setup with everything installed?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. Track-specific sandbox environments run in the browser, pre-configured with the tools you need. A stable internet connection and a modern browser are the only requirements.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is the same mentor with me for the whole track?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, for weekly checkpoint review. Your capstone gets an independent second reviewer as well, so the assessment at the end isn't resting on a single relationship.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How is a checkpoint actually graded?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Against a written rubric shared with you before you start the build — covering correctness, code or work quality, and how well you handled edge cases. You'll always know the bar before you're measured against it.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does support stop once I graduate?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No — resume reviews, mock interviews, and hiring-partner referrals continue for twelve months after your capstone, through the same platform and mentor network you used during the track.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta-banner-section">
+    <div class="cta-card">
+      <img class="cta-bg-img" src="../assets/AI20.webp" alt="">
+      <h2 class="cta-heading">Seen how it runs.<br>Ready to see which line fits you?</h2>
+      <a href="tracks.html#compare" class="cta-btn">Compare the four tracks</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html#home" class="footer-logo" aria-label="Stackly — Home">
+          <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img footer-logo-img">
+        </a>
+        <p class="footer-tagline">A cohort-based training institute running practitioner-led programs since 2010, with placement support that doesn't stop at graduation.</p>
+        <div class="footer-contact">
+          <a href="./404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="./404.html"><i class="fa-solid fa-envelope"></i> admissions@stackly.edu</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <nav class="footer-nav">
+          <a href="../index.html">Home</a>
+          <a href="tracks.html">Tracks</a>
+          <a href="how-it-works.html">How it works</a>
+          <a href="./faculty.html">Faculty</a>
+          <a href="./outcomes.html">Outcomes</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Campus</h4>
+        <address>
+          MMR Complex, Periyakollappatty<br>
+          Chinna Thirupathi, Tamil Nadu 636008
+        </address>
+        <p class="footer-hours">Mon–Sat · 9am – 7pm</p>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Follow</h4>
+        <div class="footer-social-icons">
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Stackly Institute of Professional Training. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="404.html">Privacy Policy</a><span>·</span><a href="404.html">Terms</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="../js/how-it-works.js"></script>
+</body>
+</html>

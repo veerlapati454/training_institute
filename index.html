@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stackly — Get on the track to your next job</title>
+<meta name="description" content="Stackly is a professional training institute running cohort-based programs in web development, data science, cloud, design and marketing, with practitioner faculty and dedicated placement support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="board-preloader" id="boardPreloader" role="status" aria-live="polite" aria-label="Loading Stackly">
+  <div class="preloader-inner">
+    <img src="./assets/stackly_logo.webp" alt="Stackly" class="preloader-logo-img">
+    <div class="preloader-flaps" aria-hidden="true">
+      <span class="flap">S</span><span class="flap">T</span><span class="flap">A</span><span class="flap">C</span><span class="flap">K</span><span class="flap">L</span><span class="flap">Y</span>
+    </div>
+    <span class="preloader-tag">Preparing today's board</span>
+  </div>
+</div>
+
+<div class="scroll-progress-container"><div class="scroll-progress-bar" id="page-scroll-indicator"></div></div>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <div class="navbar-pill">
+      <a href="#home" class="navbar-brand" aria-label="Stackly — Home">
+        <img src="./assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img">
+      </a>
+
+      <nav class="navbar-links" id="main-nav-links">
+        <a href="#home" class="nav-item active">Home</a>
+        <a href="./html/tracks.html" class="nav-item">Tracks</a>
+        <a href="./html/how it works.html" class="nav-item">How it works</a>
+        <a href="./html/faculty.html" class="nav-item">Faculty</a>
+        <a href="./html/outcomes.html" class="nav-item">Outcomes</a>
+        <a href="./html/contact.html" class="nav-item">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="./html/login.html" class="btn-book-mobile">Book a seat</a>
+        </div>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="./html/login.html" class="btn-book">Book a seat</a>
+        <button class="menu-hamburger" id="nav-menu-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 1. Hero ===== -->
+  <section class="hero-section" id="home">
+    <div class="hero-grid-bg" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <span class="hero-eyebrow" data-hero-el>NEXT DEPARTURE · MONDAY COHORTS OPEN</span>
+        <h1 class="hero-heading" data-hero-el>Get on the track<br>to your next job.</h1>
+        <p class="hero-desc" data-hero-el>Stackly runs cohort-based programs in tech, design and analytics. Small batches, faculty who still work in the field, and a placement team that rides with you until there's an offer on the table.</p>
+        <div class="hero-buttons" data-hero-el>
+          <a href="#board" class="btn-solid">See today's board</a>
+          <a href="#contact" class="btn-outline">Talk to an advisor</a>
+        </div>
+      </div>
+
+      <div class="hero-board" data-hero-el aria-label="Sample departure board">
+        <div class="hero-board-head">
+          <span>ROUTE</span><span>DESTINATION</span><span>STATUS</span>
+        </div>
+        <ul class="hero-board-list">
+          <li><span class="hb-code">WD‑204</span><span class="hb-dest">Frontend Engineer</span><span class="hb-status status-open">BOARDING</span></li>
+          <li><span class="hb-code">DS‑310</span><span class="hb-dest">Data Analyst</span><span class="hb-status status-low">FEW SEATS</span></li>
+          <li><span class="hb-code">CC‑402</span><span class="hb-dest">Cloud Engineer</span><span class="hb-status status-open">BOARDING</span></li>
+          <li><span class="hb-code">UX‑150</span><span class="hb-dest">Product Designer</span><span class="hb-status status-low">FEW SEATS</span></li>
+        </ul>
+        <div class="hero-board-foot">Board updates every cohort · <span id="hero-clock">--:--</span> IST</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2. Status strip ===== -->
+  <section class="stats-section">
+    <div class="stats-card" id="statsCard">
+      <div class="stat-col">
+        <div class="stat-num"><span class="stat-number" data-target="15">0</span><span class="stat-suffix">yrs</span></div>
+        <p class="stat-label">In operation</p>
+      </div>
+      <div class="stat-col">
+        <div class="stat-num"><span class="stat-number" data-target="24">0</span><span class="stat-suffix">k+</span></div>
+        <p class="stat-label">Riders placed</p>
+      </div>
+      <div class="stat-col">
+        <div class="stat-num"><span class="stat-number" data-target="91">0</span><span class="stat-suffix">%</span></div>
+        <p class="stat-label">Placed within 6 months</p>
+      </div>
+      <div class="stat-col">
+        <div class="stat-num"><span class="stat-number" data-target="180">0</span><span class="stat-suffix">+</span></div>
+        <p class="stat-label">Hiring partners on the line</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Tracks (categories) ===== -->
+  <section class="tracks-section" id="tracks">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">FOUR LINES, ONE TERMINUS</span>
+        <h2 class="section-heading">Pick a line, we'll get you to the job</h2>
+        <p class="section-sub">Every line is built with the companies that hire off it, refreshed each cohort, and taught by people who still ride it daily.</p>
+      </div>
+
+      <div class="tracks-grid">
+        <a href="#board" class="track-card track-large">
+          <img src="./assets/t1.webp" alt="Full stack web development training">
+          <span class="track-badge"><i class="fa-solid fa-code"></i></span>
+          <div class="track-overlay"><span class="track-code">WD LINE</span><span class="track-label">Web &amp; Software Development</span></div>
+        </a>
+        <a href="#board" class="track-card track-small">
+          <img src="./assets/t2.webp" alt="Data science and AI training">
+          <span class="track-badge"><i class="fa-solid fa-chart-line"></i></span>
+          <div class="track-overlay"><span class="track-code">DS LINE</span><span class="track-label">Data Science &amp; AI</span></div>
+        </a>
+        <a href="#board" class="track-card track-small">
+          <img src="./assets/t3.webp" alt="Digital marketing training">
+          <span class="track-badge"><i class="fa-solid fa-bullhorn"></i></span>
+          <div class="track-overlay"><span class="track-code">DM LINE</span><span class="track-label">Digital Marketing</span></div>
+        </a>
+        <a href="#board" class="track-card track-large">
+          <img src="./assets/t4.webp" alt="Cloud and DevOps training">
+          <span class="track-badge"><i class="fa-solid fa-cloud"></i></span>
+          <div class="track-overlay"><span class="track-code">CC LINE</span><span class="track-label">Cloud &amp; DevOps</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3b. Hiring partners marquee ===== -->
+  <section class="partners-section" aria-label="Hiring partners">
+    <p class="partners-caption">180+ companies hire straight off this board</p>
+    <div class="partners-marquee">
+      <div class="partners-track">
+        <span>NIMBUS TECH</span><span>VERTEX LABS</span><span>ORBIT CLOUD</span><span>PIXELWORKS</span>
+        <span>DATAFORGE</span><span>BRIGHTLINE</span><span>NORTHBEAM</span><span>QUANTA SYSTEMS</span>
+        <span>HALCYON DIGITAL</span><span>STRATUS WORKS</span>
+      </div>
+      <div class="partners-track" aria-hidden="true">
+        <span>NIMBUS TECH</span><span>VERTEX LABS</span><span>ORBIT CLOUD</span><span>PIXELWORKS</span>
+        <span>DATAFORGE</span><span>BRIGHTLINE</span><span>NORTHBEAM</span><span>QUANTA SYSTEMS</span>
+        <span>HALCYON DIGITAL</span><span>STRATUS WORKS</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Departure board (programs) ===== -->
+  <section class="board-section" id="board">
+    <div class="board-header">
+      <span class="eyebrow light">TODAY'S BOARD</span>
+      <h2 class="section-heading light">Open cohorts, updated live</h2>
+      <p class="section-sub light">Batches are capped at 25 so faculty can review every rider's project work directly.</p>
+    </div>
+
+    <div class="board-table-wrap">
+      <div class="board-table" role="table" aria-label="Open programs">
+        <div class="board-row board-row-head" role="row">
+          <span role="columnheader">Route</span>
+          <span role="columnheader">Program</span>
+          <span role="columnheader">Destination role</span>
+          <span role="columnheader">Duration</span>
+          <span role="columnheader">Schedule</span>
+          <span role="columnheader">Fee</span>
+          <span role="columnheader">Status</span>
+        </div>
+
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">WD‑204</span>
+          <span class="b-name" role="cell">Full Stack Web Development</span>
+          <span role="cell">Frontend / Backend Engineer</span>
+          <span role="cell">24 wks</span>
+          <span role="cell">Weekday &amp; Weekend</span>
+          <span class="b-fee" role="cell">₹68,000</span>
+          <span role="cell"><span class="status-pill status-open">Boarding</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">DS‑310</span>
+          <span class="b-name" role="cell">Data Science &amp; Applied AI</span>
+          <span role="cell">Data Analyst / Scientist</span>
+          <span role="cell">28 wks</span>
+          <span role="cell">Weekend</span>
+          <span class="b-fee" role="cell">₹92,000</span>
+          <span role="cell"><span class="status-pill status-low">Few seats</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">DM‑115</span>
+          <span class="b-name" role="cell">Digital Marketing Mastery</span>
+          <span role="cell">Marketing Specialist</span>
+          <span role="cell">12 wks</span>
+          <span role="cell">Weekday</span>
+          <span class="b-fee" role="cell">₹34,500</span>
+          <span role="cell"><span class="status-pill status-open">Boarding</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">CC‑402</span>
+          <span class="b-name" role="cell">Cloud &amp; DevOps (AWS)</span>
+          <span role="cell">Cloud / DevOps Engineer</span>
+          <span role="cell">20 wks</span>
+          <span role="cell">Weekend</span>
+          <span class="b-fee" role="cell">₹78,000</span>
+          <span role="cell"><span class="status-pill status-open">Boarding</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">UX‑150</span>
+          <span class="b-name" role="cell">UI/UX Design Professional</span>
+          <span role="cell">Product Designer</span>
+          <span role="cell">16 wks</span>
+          <span role="cell">Weekday</span>
+          <span class="b-fee" role="cell">₹52,000</span>
+          <span role="cell"><span class="status-pill status-low">Few seats</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">CS‑330</span>
+          <span class="b-name" role="cell">Cybersecurity Fundamentals</span>
+          <span role="cell">Security Analyst</span>
+          <span role="cell">18 wks</span>
+          <span role="cell">Weekend</span>
+          <span class="b-fee" role="cell">₹64,500</span>
+          <span role="cell"><span class="status-pill status-open">Boarding</span></span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="b-code" role="cell">BA‑220</span>
+          <span class="b-name" role="cell">Business Analytics</span>
+          <span role="cell">Business Analyst</span>
+          <span role="cell">14 wks</span>
+          <span role="cell">Weekday</span>
+          <span class="b-fee" role="cell">₹46,000</span>
+          <span role="cell"><span class="status-pill status-open">Boarding</span></span>
+        </div>
+      </div>
+    </div>
+    <div class="board-cta">
+      <a href="#contact" class="btn-solid light">Reserve a seat</a>
+    </div>
+  </section>
+
+  <!-- ===== 5. Route / How it works ===== -->
+  <section class="route-section" id="route">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">THE ROUTE</span>
+        <h2 class="section-heading">Four stops between you and an offer</h2>
+      </div>
+
+      <div class="route-line">
+        <div class="route-stop">
+          <span class="route-stop-num">01</span>
+          <h3>Enroll &amp; assess</h3>
+          <p>A short skills call places you in the right batch and flags any gaps to close before day one.</p>
+        </div>
+        <div class="route-stop">
+          <span class="route-stop-num">02</span>
+          <h3>Build in cohort</h3>
+          <p>Weekly live sessions with practitioner faculty, plus 3–5 shipped projects reviewed like real pull requests.</p>
+        </div>
+        <div class="route-stop">
+          <span class="route-stop-num">03</span>
+          <h3>Interview-ready</h3>
+          <p>Mock interviews, resume rebuilds, and salary-negotiation coaching before you talk to a single company.</p>
+        </div>
+        <div class="route-stop">
+          <span class="route-stop-num">04</span>
+          <h3>Placed &amp; supported</h3>
+          <p>Referrals into 180+ hiring partners, with the placement cell staying on call for up to 12 months after.</p>
+        </div>
+      </div>
+
+      <div class="route-photo-row">
+        <img src="./assets/t5.webp" alt="Instructor reviewing a learner's project at Stackly">
+        <div class="route-photo-note">
+          <p>"Since 2010, every syllabus has been co-written with the same hiring managers who later interview our graduates."</p>
+          <span>— Faculty Council, Stackly</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Why choose us ===== -->
+  <section class="why-section">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHY STACKLY</span>
+        <h2 class="section-heading">Built to answer to the job market, not a syllabus</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card">
+          <span class="why-icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+          <h3>Practitioner faculty</h3>
+          <p>Every instructor works in industry today; material is checked against real job postings each cohort.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon"><i class="fa-solid fa-diagram-project"></i></span>
+          <h3>Live project portfolio</h3>
+          <p>Graduate with shipped work reviewed by mentors — ready to open in an interview, not just describe.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon"><i class="fa-solid fa-route"></i></span>
+          <h3>Dedicated placement cell</h3>
+          <p>One-on-one interview prep and direct referrals into our hiring partner network.</p>
+        </div>
+        <div class="why-card">
+          <span class="why-icon"><i class="fa-solid fa-clock"></i></span>
+          <h3>Flexible batch timing</h3>
+          <p>Weekday evening or weekend-intensive schedules, so you can train without a career break.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6b. Faculty spotlight ===== -->
+  <section class="faculty-section" id="faculty">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHO'S DRIVING</span>
+        <h2 class="section-heading">Faculty who clocked in this morning — at their day job</h2>
+        <p class="section-sub">Every instructor below is teaching the same stack they shipped to production this week.</p>
+      </div>
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <img src="./assets/l25.webp" alt="Portrait of Arjun Nair">
+          <h3>Arjun Nair</h3>
+          <p class="faculty-role">Senior Engineer, Northbeam</p>
+          <p class="faculty-track">Teaches WD‑204</p>
+        </div>
+        <div class="faculty-card">
+          <img src="./assets/l29.webp" alt="Portrait of Meera Krishnan">
+          <h3>Meera Krishnan</h3>
+          <p class="faculty-role">Lead Data Scientist, Quanta Systems</p>
+          <p class="faculty-track">Teaches DS‑310</p>
+        </div>
+        <div class="faculty-card">
+          <img src="./assets/l51.webp" alt="Portrait of Rohit Sequeira">
+          <h3>Rohit Sequeira</h3>
+          <p class="faculty-role">Cloud Architect, Stratus Works</p>
+          <p class="faculty-track">Teaches CC‑402</p>
+        </div>
+        <div class="faculty-card">
+          <img src="./assets/l52.webp" alt="Portrait of Sanya Verma">
+          <h3>Sanya Verma</h3>
+          <p class="faculty-role">Product Designer, Pixelworks</p>
+          <p class="faculty-track">Teaches UX‑150</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Certification connections ===== -->
+  <section class="connections-section">
+    <div class="section-header">
+      <span class="eyebrow light">CONNECTING CERTIFICATIONS</span>
+      <h2 class="section-heading light">Each line connects to an industry credential</h2>
+      <p class="section-sub light">Every program maps onto a recognised certification exam, prepped for inside the syllabus.</p>
+    </div>
+
+    <div class="connections-track-wrap" id="connections-track-wrap">
+      <div class="connections-track" id="connections-track">
+        <article class="conn-card">
+          <div class="conn-photo"><img src="./assets/t6.webp" alt="AWS Certified Cloud Practitioner"></div>
+          <span class="conn-tag">CC‑402</span>
+          <h3>AWS Cloud Practitioner</h3>
+          <p>Exam voucher and two mock tests included.</p>
+        </article>
+        <article class="conn-card">
+          <div class="conn-photo"><img src="./assets/t7.webp" alt="Google Data Analytics certificate"></div>
+          <span class="conn-tag">DS‑310</span>
+          <h3>Google Data Analytics</h3>
+          <p>Capstone dataset aligned to the official rubric.</p>
+        </article>
+        <article class="conn-card">
+          <div class="conn-photo"><img src="./assets/t8.webp" alt="Meta Front-End Developer certificate"></div>
+          <span class="conn-tag">WD‑204</span>
+          <h3>Meta Front-End Developer</h3>
+          <p>Component projects built the way the exam expects.</p>
+        </article>
+        <article class="conn-card">
+          <div class="conn-photo"><img src="./assets/t10.webp" alt="PMI Project Management certificate"></div>
+          <span class="conn-tag">BA‑220</span>
+          <h3>PMI Project Fundamentals</h3>
+          <p>Agile and waterfall case studies from hiring partners.</p>
+        </article" alt="HubSpot Marketing certificate"></div>
+          <span class="conn-tag">DM‑115</span>
+          <h3>HubSpot Marketing</h3>
+          <p>Runs a real campaign brief before the exam.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. Testimonials ===== -->
+  <section class="riders-section" id="outcomes">
+    <div class="section-header">
+      <span class="eyebrow">RIDER OUTCOMES</span>
+      <h2 class="section-heading">From career switch to offer letter</h2>
+    </div>
+    <div class="riders-grid">
+      <div class="rider-card">
+        <p class="rider-quote">I switched from retail to frontend development in eight months. My mentor reviewed every pull request like it was a real job.</p>
+        <div class="rider-footer">
+          <img src="./assets/l18.webp" alt="Ritika Malhotra">
+          <div><h4>Ritika Malhotra</h4><p>WD‑204 → Frontend Engineer, Mumbai</p></div>
+        </div>
+      </div>
+      <div class="rider-card">
+        <p class="rider-quote">The placement cell lined up four interviews in my first week after graduating. I had an offer within eighteen days.</p>
+        <div class="rider-footer">
+          <img src="./assets/r11.webp" alt="Devansh Kapoor">
+          <div><h4>Devansh Kapoor</h4><p>DS‑310 → Data Analyst, Bengaluru</p></div>
+        </div>
+      </div>
+      <div class="rider-card">
+        <p class="rider-quote">I kept my day job and trained weekends. Recorded sessions and mentor office hours made that actually workable.</p>
+        <div class="rider-footer">
+          <img src="./assets/l53.webp" alt="Ananya Iyer">
+          <div><h4>Ananya Iyer</h4><p>CC‑402 → Cloud Engineer, Pune</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8b. FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BEFORE YOU BOARD</span>
+        <h2 class="section-heading">Questions riders ask us most</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need coding experience to join a tech track?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. WD‑204, DS‑310 and CC‑402 all start from fundamentals in week one. If you already code, a quick skills call places you further along so you're not repeating material.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if I miss a live session?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every session is recorded and posted within a few hours, and mentor office hours run twice a week so you can catch up on anything that didn't land the first time.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is placement support guaranteed?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>We don't promise a job — no honest institute can. What we commit to is interview prep, referrals into our 180+ hiring partners, and staying on call for up to 12 months after you graduate.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I switch tracks after enrolling?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, within the first two weeks of a cohort, subject to seats being open on the new line. Talk to your admissions advisor and they'll handle the transfer.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What's the refund policy if I drop out early?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Full refund within the first 7 days of a cohort, minus a small registration fee. After that, refunds are prorated for the weeks you haven't attended.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. Gallery ===== -->
+  <section class="platform-section">
+    <div class="section-header">
+      <span class="eyebrow">ON THE PLATFORM</span>
+      <h2 class="section-heading">A day at Stackly</h2>
+    </div>
+    <div class="platform-grid">
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c1.webp" alt="Learners in a Stackly classroom"></a>
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c2.webp" alt="Group project discussion"></a>
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c3.webp" alt="Graduation day at Stackly"></a>
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c4.webp" alt="Study group working together"></a>
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c5.webp" alt="Mentor session in progress"></a>
+      <a href="./html/404.html" class="platform-item"><img src="./assets/c6.webp" alt="Learners collaborating on a project"></a>
+    </div>
+  </section>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta-banner-section">
+    <div class="cta-card">
+      <h2 class="cta-heading">The next batch is boarding.<br>Yours doesn't have to wait.</h2>
+      <a href="./html/404.html" class="cta-btn">Book a free counselling session</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="#home" class="footer-logo" aria-label="Stackly — Home">
+          <img src="./assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img footer-logo-img">
+        </a>
+        <p class="footer-tagline">A cohort-based training institute running practitioner-led programs since 2010, with placement support that doesn't stop at graduation.</p>
+        <div class="footer-contact">
+          <a href="./html/404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="./html/404.html"><i class="fa-solid fa-envelope"></i> admissions@stackly.edu</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <nav class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="./html/tracks.html">Tracks</a>
+          <a href="./html/how it works.html">How it works</a>
+          <a href="./html/faculty.html">Faculty</a>
+          <a href="./html/outcomes.html">Outcomes</a>
+          <a href="./html/contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Campus</h4>
+        <address>
+          MMR Complex, Periyakollappatty<br>
+          Chinna Thirupathi, Tamil Nadu 636008
+        </address>
+        <p class="footer-hours">Mon–Sat · 9am – 7pm</p>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Follow</h4>
+        <div class="footer-social-icons">
+          <a href="./html/404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="./html/404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="./html/404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="./html/404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Stackly Institute of Professional Training. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="./html/404.html">Privacy Policy</a><span>·</span><a href="./html/404.html">Terms</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

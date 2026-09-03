@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faculty — Stackly</title>
+<meta name="description" content="Meet the mentors reviewing your work at Stackly: current practitioners across Software Engineering, Data Science, Cloud & DevOps, and Product Design, how they're vetted, and how mentorship actually runs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/faculty.css">
+</head>
+<body>
+
+<div class="scroll-progress-container"><div class="scroll-progress-bar" id="page-scroll-indicator"></div></div>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <div class="navbar-pill">
+      <a href="index.html#home" class="navbar-brand" aria-label="Stackly — Home">
+        <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img">
+      </a>
+
+      <nav class="navbar-links" id="main-nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="tracks.html" class="nav-item">Tracks</a>
+        <a href="how it works.html" class="nav-item">How it works</a>
+        <a href="./faculty.html" class="nav-item active">Faculty</a>
+        <a href="./outcomes.html" class="nav-item">Outcomes</a>
+        <a href="./contact.html" class="nav-item">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="./login.html" class="btn-book-mobile">Book a seat</a>
+        </div>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="./login.html" class="btn-book">Book a seat</a>
+        <button class="menu-hamburger" id="nav-menu-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 1. Page hero ===== -->
+  <section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="../assets/h1.webp" alt="">
+    </div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="eyebrow light">THE PEOPLE</span>
+      <h1 class="section-heading light">Meet the mentors reviewing your actual work</h1>
+      <p class="section-sub light">Every name on this page works the job today — not adjunct instructors reciting old notes, but engineers, scientists, and designers shipping in production right now, who also happen to review your checkpoints.</p>
+      <div class="hero-buttons">
+        <a href="#roster" class="btn-solid">See the full roster</a>
+        <a href="how-it-works.html#assessment" class="btn-outline">See how reviews work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sticky in-page sub-navigation ===== -->
+  <div class="subnav-wrap" id="subnav-wrap">
+    <nav class="subnav" id="subnav" aria-label="On this page">
+      <a href="#overview" class="subnav-pill">Overview</a>
+      <a href="#bar" class="subnav-pill">The bar</a>
+      <a href="#roster" class="subnav-pill">Roster</a>
+      <a href="#spotlight" class="subnav-pill">Spotlight</a>
+      <a href="#philosophy" class="subnav-pill">Philosophy</a>
+      <a href="#stats" class="subnav-pill">By the numbers</a>
+      <a href="#faq" class="subnav-pill">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- ===== 2. Overview ===== -->
+  <section class="overview-section" id="overview">
+    <div class="section-inner">
+      <div class="faculty-photo-row">
+        <img src="../assets/h2.webp" alt="A mentor walking a rider through a code review at a shared desk">
+        <div class="faculty-photo-note">
+          <p>"We don't hire people to teach. We hire people who are already doing the work, and ask them to bring a rider along for a year."</p>
+          <span>— Stackly faculty office</span>
+        </div>
+      </div>
+
+      <div class="overview-stats">
+        <div class="overview-stat">
+          <span class="overview-stat-num">42</span>
+          <p>Active mentors across all four tracks this cohort cycle</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">100%</span>
+          <p>Currently employed in the exact role and field they mentor in</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">6.2 yrs</span>
+          <p>Average industry experience per mentor at time of hire</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. The bar (vetting process) ===== -->
+  <section class="bar-section" id="bar">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">HOW WE HIRE MENTORS</span>
+        <h2 class="section-heading">The bar someone has to clear before they review your work</h2>
+        <p class="section-sub">Fewer than one in six applicants makes it through. Here's the actual process, not a marketing version of it.</p>
+      </div>
+
+      <div class="bar-grid">
+        <div class="bar-card">
+          <span class="bar-card-num">1</span>
+          <h3>Currently working the job</h3>
+          <p>Applications open only to people actively employed in the discipline they'd teach — no former practitioners, no career instructors.</p>
+        </div>
+        <div class="bar-card">
+          <span class="bar-card-num">2</span>
+          <h3>Technical bar-raiser round</h3>
+          <p>A senior peer in the same discipline runs a working session on real problems — the same bar used for a hire on their own team.</p>
+        </div>
+        <div class="bar-card">
+          <span class="bar-card-num">3</span>
+          <h3>Live teaching trial</h3>
+          <p>Candidates review three anonymized rider submissions on camera. We're watching how they explain a mistake, not just whether they catch it.</p>
+        </div>
+        <div class="bar-card">
+          <span class="bar-card-num">4</span>
+          <h3>Panel approval</h3>
+          <p>Three current mentors and a program director vote before an offer goes out. Any single "no" sends the file back for another cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Roster ===== -->
+  <section class="roster-section" id="roster">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">THE FULL LINEUP</span>
+        <h2 class="section-heading light">Mentors, by track</h2>
+        <p class="section-sub light">Filter to see who's currently mentoring in your track — this is the same roster active riders are matched against today.</p>
+      </div>
+
+      <div class="roster-filters" id="roster-filters" role="group" aria-label="Filter faculty by track">
+        <button class="roster-filter-btn active" data-track="all">All tracks</button>
+        <button class="roster-filter-btn" data-track="se">Software Engineering</button>
+        <button class="roster-filter-btn" data-track="ds">Data Science</button>
+        <button class="roster-filter-btn" data-track="cd">Cloud &amp; DevOps</button>
+        <button class="roster-filter-btn" data-track="pd">Product Design</button>
+      </div>
+
+      <div class="roster-grid" id="roster-grid">
+        <div class="roster-card" data-track="se">
+          <div class="roster-photo"><img src="../assets/h16.webp" alt="Portrait of Marcus Chen"></div>
+          <div class="roster-body">
+            <span class="roster-track">Software Engineering</span>
+            <h3>Marcus Chen</h3>
+            <p class="roster-role">Senior Software Engineer, Northline Payments</p>
+            <p class="roster-note">Reviews every checkpoint the way he'd review a pull request headed to production.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="ds">
+          <div class="roster-photo"><img src="../assets/h17.webp" alt="Portrait of Priya Ramesh"></div>
+          <div class="roster-body">
+            <span class="roster-track">Data Science</span>
+            <h3>Priya Ramesh</h3>
+            <p class="roster-role">Staff Data Scientist, Cortex Analytics</p>
+            <p class="roster-note">Mentors DS-310 and leads the specialization sprint in applied ML.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="cd">
+          <div class="roster-photo"><img src="../assets/h18.webp" alt="Portrait of Aditi Rao"></div>
+          <div class="roster-body">
+            <span class="roster-track">Cloud &amp; DevOps</span>
+            <h3>Aditi Rao</h3>
+            <p class="roster-role">DevOps Lead, Ferro Cloud Systems</p>
+            <p class="roster-note">Built the sandbox's AWS environment before she ever reviewed a checkpoint in it.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="pd">
+          <div class="roster-photo"><img src="../assets/h19.webp" alt="Portrait of Jordan Lee"></div>
+          <div class="roster-body">
+            <span class="roster-track">Product Design</span>
+            <h3>Jordan Lee</h3>
+            <p class="roster-role">Product Design Lead, Hearth &amp; Co.</p>
+            <p class="roster-note">Grades a portfolio piece the way a hiring panel actually would, tradeoffs and all.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="ds">
+          <div class="roster-photo"><img src="../assets/img10.webp" alt="Portrait of Kabir Malhotra"></div>
+          <div class="roster-body">
+            <span class="roster-track">Data Science</span>
+            <h3>Kabir Malhotra</h3>
+            <p class="roster-role">ML Engineer, Verdant Health</p>
+            <p class="roster-note">Splits office hours between model evaluation and the messier work of data cleaning.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="se">
+          <div class="roster-photo"><img src="../assets/img11.webp" alt="Portrait of Sara Whitfield"></div>
+          <div class="roster-body">
+            <span class="roster-track">Software Engineering</span>
+            <h3>Sara Whitfield</h3>
+            <p class="roster-role">Backend Engineer, Marlow Commerce</p>
+            <p class="roster-note">Keeps a running doc of the exact bugs riders hit each cycle to sharpen next week's rubric.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="cd">
+          <div class="roster-photo"><img src="../assets/img12.webp" alt="Portrait of Neha Iyer"></div>
+          <div class="roster-body">
+            <span class="roster-track">Cloud &amp; DevOps</span>
+            <h3>Neha Iyer</h3>
+            <p class="roster-role">Site Reliability Engineer, Basalt Networks</p>
+            <p class="roster-note">Runs the incident-response simulation every Cloud &amp; DevOps cohort walks through in week six.</p>
+          </div>
+        </div>
+
+        <div class="roster-card" data-track="pd">
+          <div class="roster-photo"><img src="../assets/img33.webp" alt="Portrait of Owen Baptiste"></div>
+          <div class="roster-body">
+            <span class="roster-track">Product Design</span>
+            <h3>Owen Baptiste</h3>
+            <p class="roster-role">Senior Product Designer, Halyard Studio</p>
+            <p class="roster-note">Pushes riders to defend a design decision out loud before it ever reaches a rubric score.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Spotlight ===== -->
+  <section class="spotlight-section" id="spotlight">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">MENTOR SPOTLIGHT</span>
+        <h2 class="section-heading">A closer look at how one mentor actually works</h2>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-media">
+          <img src="../assets/img43.webp" alt="Marcus Chen at his desk reviewing code">
+        </div>
+        <div>
+          <p class="mentor-quote">"My rubric has a line for correctness and a line for judgment. A checkpoint can pass every test and still show me a rider who got lucky — I'm looking for the one who can explain why it works."</p>
+          <p class="mentor-name">Marcus Chen</p>
+          <p class="mentor-role">Senior Software Engineer, Northline Payments · Mentors SE-210</p>
+
+          <div class="mentor-meta">
+            <div class="mentor-meta-item"><span>Riders mentored</span><strong>96 to date</strong></div>
+            <div class="mentor-meta-item"><span>With Stackly</span><strong>4 cohort cycles</strong></div>
+            <div class="mentor-meta-item"><span>Also does</span><strong>Capstone panel reviewer</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Philosophy ===== -->
+  <section class="philosophy-section" id="philosophy">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHAT MAKES REVIEW HERE DIFFERENT</span>
+        <h2 class="section-heading">The habits every mentor is held to</h2>
+      </div>
+
+      <div class="philosophy-grid">
+        <div class="philosophy-note">
+          <i class="fa-solid fa-code-pull-request"></i>
+          <div>
+            <h4>Review like a teammate, not a grader</h4>
+            <p>Inline comments on the actual submission — the same review style a mentor would use on their own team, not a rubric checkbox exercise.</p>
+          </div>
+        </div>
+        <div class="philosophy-note">
+          <i class="fa-solid fa-user-clock"></i>
+          <div>
+            <h4>Stay working the job</h4>
+            <p>Mentors are re-verified every cohort cycle. If someone stops working actively in the field, they stop mentoring in it until that changes.</p>
+          </div>
+        </div>
+        <div class="philosophy-note">
+          <i class="fa-solid fa-repeat"></i>
+          <div>
+            <h4>One mentor, the whole track</h4>
+            <p>Riders keep the same primary mentor start to finish, so feedback compounds across cycles instead of resetting with a new reviewer.</p>
+          </div>
+        </div>
+        <div class="philosophy-note">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <div>
+            <h4>No single opinion decides readiness</h4>
+            <p>Capstones get an independent second reviewer, and mentor performance itself is reviewed quarterly against rider feedback.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. By the numbers (animated counters) ===== -->
+  <section class="stats-section" id="stats">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BY THE NUMBERS</span>
+        <h2 class="section-heading light">The roster in aggregate</h2>
+        <p class="section-sub light">Figures pulled from the current cohort cycle, updated every term.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-block">
+          <div class="stat-number" data-count-to="42" data-suffix="">0</div>
+          <p>Active mentors currently reviewing checkpoints across all four tracks</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number" data-count-to="1" data-suffix=":12">0</div>
+          <p>Mentor-to-rider ratio maintained during every project review session</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number" data-count-to="6" data-suffix=" yrs">0</div>
+          <p>Average years of industry experience per mentor at time of hire</p>
+        </div>
+        <div class="stat-block">
+          <div class="stat-number" data-count-to="17" data-suffix="%">0</div>
+          <p>Share of applicants who clear the full vetting bar and get an offer</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BEFORE YOU ENROLL</span>
+        <h2 class="section-heading">Questions about who's teaching</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Are mentors full-time Stackly staff or working elsewhere?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every mentor holds a full-time role in the field they teach and mentors on top of that job. It's a deliberate tradeoff — you get someone whose judgment is current, in exchange for a smaller pool of available hours, which is why office hours and checkpoint turnaround are scheduled tightly around their calendars.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I request a specific mentor?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>You can list a preference during enrollment and we'll try to match it, but assignment ultimately depends on mentor capacity that cycle. Every mentor on the roster clears the same bar, so match quality doesn't depend on landing a specific name.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if a mentor leaves mid-cohort?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>It's rare, but if it happens the program director hands you off to another mentor in the same track within a week, along with your full feedback history so nothing gets lost in the transition.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do mentors also help with job placement?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Many do informally — several mentors have referred riders into openings at their own companies — but formal placement support runs through the separate career coaching team, not through your mentor relationship.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>How often is the roster updated?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every cohort cycle. Mentors are re-verified against the same bar new applicants clear, and a small number rotate out each term as their own roles or availability change.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta-banner-section">
+    <div class="cta-card">
+      <img class="cta-bg-img" src="../assets/h4.webp" alt="">
+      <h2 class="cta-heading">Met the people.<br>Ready to see how a week runs?</h2>
+      <a href="how-it-works.html" class="cta-btn">See how it works</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html#home" class="footer-logo" aria-label="Stackly — Home">
+          <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img footer-logo-img">
+        </a>
+        <p class="footer-tagline">A cohort-based training institute running practitioner-led programs since 2010, with placement support that doesn't stop at graduation.</p>
+        <div class="footer-contact">
+          <a href="./404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="./404.html"><i class="fa-solid fa-envelope"></i> admissions@stackly.edu</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <nav class="footer-nav">
+          <a href="../index.html">Home</a>
+          <a href="tracks.html">Tracks</a>
+          <a href="how it works.html">How it works</a>
+          <a href="./faculty.html">Faculty</a>
+          <a href="./outcomes.html">Outcomes</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Campus</h4>
+        <address>
+          MMR Complex, Periyakollappatty<br>
+          Chinna Thirupathi, Tamil Nadu 636008
+        </address>
+        <p class="footer-hours">Mon–Sat · 9am – 7pm</p>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Follow</h4>
+        <div class="footer-social-icons">
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Stackly Institute of Professional Training. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="404.html">Privacy Policy</a><span>·</span><a href="404.html">Terms</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="../js/faculty.js"></script>
+</body>
+</html>

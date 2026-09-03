@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Stackly</title>
+<meta name="description" content="Get in touch with Stackly admissions: call, email, or WhatsApp the team directly, send a message, or visit the campus in Tamil Nadu. Real response times, no ticket queue.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/contact.css">
+</head>
+<body>
+
+<div class="scroll-progress-container"><div class="scroll-progress-bar" id="page-scroll-indicator"></div></div>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <div class="navbar-pill">
+      <a href="index.html#home" class="navbar-brand" aria-label="Stackly — Home">
+        <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img">
+      </a>
+
+      <nav class="navbar-links" id="main-nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="tracks.html" class="nav-item">Tracks</a>
+        <a href="how it works.html" class="nav-item">How it works</a>
+        <a href="./faculty.html" class="nav-item">Faculty</a>
+        <a href="./outcomes.html" class="nav-item">Outcomes</a>
+        <a href="./contact.html" class="nav-item active">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="./login.html" class="btn-book-mobile">Book a seat</a>
+        </div>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="./login.html" class="btn-book">Book a seat</a>
+        <button class="menu-hamburger" id="nav-menu-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 1. Page hero ===== -->
+  <section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="../assets/cc38.webp" alt="">
+    </div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="eyebrow light">GET IN TOUCH</span>
+      <h1 class="section-heading light">Talk to admissions, not a ticket queue</h1>
+      <p class="section-sub light">Questions about a track, the vetting bar, or whether this cycle still has seats — call, message, or come by the campus. A person on the admissions team replies, not a bot.</p>
+      <div class="hero-buttons">
+        <a href="#form" class="btn-solid">Send a message</a>
+        <a href="#visit" class="btn-outline">Get directions</a>
+      </div>
+      <div class="hero-quickline">
+        <div class="hero-quickline-item">
+          <span>CALL</span>
+          <a href="tel:+919876543210">+91 98765 43210</a>
+        </div>
+        <div class="hero-quickline-item">
+          <span>EMAIL</span>
+          <a href="mailto:admissions@stackly.edu">admissions@stackly.edu</a>
+        </div>
+        <div class="hero-quickline-item">
+          <span>CAMPUS</span>
+          <a href="#visit">Periyakollappatty, Tamil Nadu</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Sticky in-page sub-navigation ===== -->
+  <div class="subnav-wrap" id="subnav-wrap">
+    <nav class="subnav" id="subnav" aria-label="On this page">
+      <a href="#methods" class="subnav-pill">Ways to reach us</a>
+      <a href="#form" class="subnav-pill">Send a message</a>
+      <a href="#visit" class="subnav-pill">Visit campus</a>
+      <a href="#hours" class="subnav-pill">Hours &amp; response</a>
+      <a href="#faq" class="subnav-pill">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- ===== 2. Ways to reach us ===== -->
+  <section class="methods-section" id="methods">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WAYS TO REACH US</span>
+        <h2 class="section-heading">Pick whatever's fastest for you</h2>
+        <p class="section-sub">Every channel below reaches the same small admissions team — none of them route through a call center.</p>
+      </div>
+
+      <div class="methods-grid">
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-phone"></i></div>
+          <h3>Call admissions</h3>
+          <p>Best for quick questions about eligibility, seats, or fees — a real person picks up during campus hours.</p>
+          <a href="tel:+919876543210" class="method-link">+91 98765 43210 <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="method-status" data-live>
+            <span class="dot"></span><span class="status-label">Checking hours…</span>
+          </div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-envelope"></i></div>
+          <h3>Email us</h3>
+          <p>Best for anything that needs documents attached — transcripts, portfolios, or ID for enrollment.</p>
+          <a href="mailto:admissions@stackly.edu" class="method-link">admissions@stackly.edu <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="method-status"><span class="dot"></span><span class="status-label">Usually under a day</span></div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-brands fa-whatsapp"></i></div>
+          <h3>WhatsApp</h3>
+          <p>Best for a fast back-and-forth — send a screenshot of a job posting and ask if a track fits it.</p>
+          <a href="https://wa.me/919876543210" class="method-link">Message on WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="method-status"><span class="dot"></span><span class="status-label">Fastest reply channel</span></div>
+        </div>
+
+        <div class="method-card">
+          <div class="method-icon"><i class="fa-solid fa-building"></i></div>
+          <h3>Visit the campus</h3>
+          <p>Best if you'd rather sit in on a live review session before enrolling — drop by during office hours.</p>
+          <a href="#visit" class="method-link">See the map <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="method-status"><span class="dot"></span><span class="status-label">Mon–Sat, 9am–7pm</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Contact form ===== -->
+  <section class="form-section" id="form">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">SEND A MESSAGE</span>
+        <h2 class="section-heading light">Tell us what you're trying to figure out</h2>
+        <p class="section-sub light">A track, a deadline, a transfer from another program — whatever it is, this goes straight to admissions.</p>
+      </div>
+
+      <div class="form-layout">
+        <form class="form-card" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="fname">Full name</label>
+              <input type="text" id="fname" name="fname" placeholder="Your name" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="femail">Email</label>
+              <input type="email" id="femail" name="femail" placeholder="you@email.com" required>
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="fphone">Phone</label>
+              <input type="tel" id="fphone" name="fphone" placeholder="+91 00000 00000" required>
+              <span class="field-error"></span>
+            </div>
+            <div class="field">
+              <label for="ftrack">Track you're asking about</label>
+              <select id="ftrack" name="ftrack" required>
+                <option value="" disabled selected>Choose a track</option>
+                <option value="se">Software Engineering</option>
+                <option value="ds">Data Science</option>
+                <option value="cd">Cloud &amp; DevOps</option>
+                <option value="pd">Product Design</option>
+                <option value="unsure">Not sure yet</option>
+              </select>
+              <span class="field-error"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fmessage">Message</label>
+            <textarea id="fmessage" name="fmessage" placeholder="What do you want to know?" required></textarea>
+            <span class="field-error"></span>
+          </div>
+
+          <div class="form-submit-row">
+            <button type="submit" class="btn-solid" id="form-submit-btn">Send message</button>
+            <span class="form-note">We reply from admissions@stackly.edu — check spam if it's quiet.</span>
+          </div>
+
+          <div class="form-success" id="form-success">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>Got it — admissions will get back to you shortly.</span>
+          </div>
+        </form>
+
+        <div class="next-card">
+          <h3>What happens after you hit send</h3>
+          <div class="next-step">
+            <span class="next-step-num">1</span>
+            <div>
+              <h4>Lands with admissions, not a queue</h4>
+              <p>Your message goes to the same small team that answers the phone — no auto-router in between.</p>
+            </div>
+          </div>
+          <div class="next-step">
+            <span class="next-step-num">2</span>
+            <div>
+              <h4>Matched to a track lead if needed</h4>
+              <p>Technical questions get forwarded to whoever leads that track so the answer is accurate, not generic.</p>
+            </div>
+          </div>
+          <div class="next-step">
+            <span class="next-step-num">3</span>
+            <div>
+              <h4>You hear back</h4>
+              <p>By email or phone, whichever you left — typically within a day, faster during business hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Visit campus / map ===== -->
+  <section class="visit-section" id="visit">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">VISIT THE CAMPUS</span>
+        <h2 class="section-heading">Come see a review session in person</h2>
+        <p class="section-sub">Drop-ins are welcome during office hours — no appointment required to look around.</p>
+      </div>
+
+      <div class="visit-layout">
+        <div class="visit-details">
+          <div class="visit-address">
+            <h3>Stackly campus</h3>
+            <p>MMR Complex, Periyakollappatty<br>Chinna Thirupathi, Tamil Nadu 636008</p>
+          </div>
+
+          <div class="visit-info-row">
+            <i class="fa-solid fa-clock"></i>
+            <div>
+              <h4>Office hours</h4>
+              <p>Monday to Saturday, 9am – 7pm. Closed Sundays and public holidays.</p>
+            </div>
+          </div>
+          <div class="visit-info-row">
+            <i class="fa-solid fa-car"></i>
+            <div>
+              <h4>Parking</h4>
+              <p>Free visitor parking at the MMR Complex entrance — ask the front desk for a pass.</p>
+            </div>
+          </div>
+          <div class="visit-info-row">
+            <i class="fa-solid fa-train-subway"></i>
+            <div>
+              <h4>Getting here</h4>
+              <p>Nearest bus stop is a five-minute walk; most visitors arrive by car or auto.</p>
+            </div>
+          </div>
+
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Stackly+(Preyfox+LLC+%C3%97+Stackly)" target="_blank" rel="noopener" class="btn-solid visit-directions-btn">Get directions</a>
+        </div>
+
+        <div class="map-frame">
+          <div class="map-frame-skeleton">
+            <span class="map-pin-ping"></span>
+            <span>Loading map…</span>
+          </div>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4888834504704!2d78.3938656!3d17.436299599999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9100082a8339%3A0x7cc49de9af7b4dbb!2sStackly%20(Preyfox%20LLC%20%C3%97%20Stackly)!5e0!3m2!1sen!2sin!4v1788323282309!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin" title="Stackly campus map"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Hours & response times ===== -->
+  <section class="hours-section" id="hours">
+    <div class="section-inner">
+      <div class="hours-layout">
+        <div>
+          <div class="section-header" style="margin-bottom:32px;padding:0;">
+            <span class="eyebrow">HOURS</span>
+            <h2 class="section-heading">When someone's actually at the desk</h2>
+          </div>
+          <div class="hours-table">
+            <div class="hours-row"><span>Monday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Tuesday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Wednesday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Thursday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Friday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Saturday</span><span>9am – 7pm</span></div>
+            <div class="hours-row"><span>Sunday</span><span>Closed</span></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="section-header" style="margin-bottom:32px;padding:0;">
+            <span class="eyebrow">RESPONSE TIMES</span>
+            <h2 class="section-heading">What to expect after you reach out</h2>
+          </div>
+          <div class="response-times">
+            <div class="response-item">
+              <span class="response-figure">&lt;5<span class="unit">min</span></span>
+              <p>Typical first reply on WhatsApp during office hours.</p>
+            </div>
+            <div class="response-item">
+              <span class="response-figure">1<span class="unit">day</span></span>
+              <p>Typical turnaround on email, including ones with attachments to review.</p>
+            </div>
+            <div class="response-item">
+              <span class="response-figure">0<span class="unit">wait</span></span>
+              <p>Phone calls during office hours are answered directly, no hold queue.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BEFORE YOU REACH OUT</span>
+        <h2 class="section-heading">Quick answers, in case they save you a message</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need to book a call before enrolling?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No — you can enroll directly through the booking page. A call is only useful if you're still deciding between tracks or want questions answered first.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can I get a refund or defer if my seat doesn't work out?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Deferrals and refund windows depend on how close you are to a cohort's start date — email admissions with your enrollment date and they'll walk you through the specific policy that applies.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is there someone I can talk to about corporate or group enrollment?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — mention "group enrollment" in your message and it gets routed to the partnerships lead instead of general admissions.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What's the fastest way to reach you outside office hours?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Email or the contact form above — both are checked first thing the next business day, even though live replies pause outside office hours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta-banner-section">
+    <div class="cta-card">
+      <img class="cta-bg-img" src="../assets/cc39.webp" alt="">
+      <h2 class="cta-heading">Know which track you want?<br>Seats are held per cohort, not on a waitlist.</h2>
+      <a href="./login.html" class="cta-btn">Book a seat</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="contact-footer">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html#home" class="footer-logo" aria-label="Stackly — Home">
+          <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img footer-logo-img">
+        </a>
+        <p class="footer-tagline">A cohort-based training institute running practitioner-led programs since 2010, with placement support that doesn't stop at graduation.</p>
+        <div class="footer-contact">
+          <a href="tel:+919876543210"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="mailto:admissions@stackly.edu"><i class="fa-solid fa-envelope"></i> admissions@stackly.edu</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <nav class="footer-nav">
+          <a href="../index.html">Home</a>
+          <a href="tracks.html">Tracks</a>
+          <a href="how it works.html">How it works</a>
+          <a href="./faculty.html">Faculty</a>
+          <a href="./outcomes.html">Outcomes</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Campus</h4>
+        <address>
+          MMR Complex, Periyakollappatty<br>
+          Chinna Thirupathi, Tamil Nadu 636008
+        </address>
+        <p class="footer-hours">Mon–Sat · 9am – 7pm</p>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Follow</h4>
+        <div class="footer-social-icons">
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Stackly Institute of Professional Training. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="404.html">Privacy Policy</a><span>·</span><a href="404.html">Terms</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="../js/contact.js"></script>
+</body>
+</html>

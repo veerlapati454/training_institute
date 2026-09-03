@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>STACKLY · Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    /* =========================================================
+       STACKLY — 404 (shares tokens with Rider / Faculty portals)
+       ========================================================= */
+    * { box-sizing: border-box; margin: 0; }
+    :root {
+      --paper: #F6F2EA;
+      --paper-deep: #EDE6D8;
+      --card: #FFFFFF;
+      --line: rgba(22,35,44,.13);
+      --line-bright: rgba(22,35,44,.24);
+      --ink: #16232C;
+      --ink-soft: #5C6B70;
+      --ink-faint: #8E9CA0;
+      --ink-faintest: rgba(92,107,112,0.68);
+      --amber: #FF7A59;
+      --amber-deep: #E4553A;
+      --amber-soft: #FFE3D9;
+      --amber-glow: rgba(255,122,89,0.22);
+      --indigo-deep: #0A1A26;
+      --indigo: #122A3A;
+      --green: #2E8F79;
+      --green-bright: #226657;
+      --green-soft: #DBF0EA;
+      --danger: #B03A2E;
+      --font-display: 'Fraunces', serif;
+      --font-body: 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --ease: cubic-bezier(.19,1,.22,1);
+      --radius-sm:6px;
+      --radius-md:12px;
+      --radius-lg:20px;
+    }
+    @media (prefers-reduced-motion: reduce){
+      *{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+    }
+    ::selection{ background:var(--amber); color:#FDFBF5; }
+    body {
+      font-family: var(--font-body);
+      background: var(--paper);
+      color: var(--ink);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    .classification-bar {
+      background: var(--indigo-deep); color: #EDE7D6;
+      font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; text-align: center;
+      padding: 7px 10px;
+    }
+    .page-root {
+      min-height: calc(100vh - 32px);
+      display: flex; align-items: center; justify-content: center;
+      padding: 40px 20px; position: relative; overflow: hidden;
+    }
+    .page-root::before{
+      content:""; position:absolute; inset:0; z-index:0; pointer-events:none;
+      background-image:radial-gradient(circle at 15% 15%, rgba(255,122,89,0.07) 0%, transparent 50%),
+                       radial-gradient(circle at 88% 82%, rgba(46,143,121,0.06) 0%, transparent 50%);
+    }
+    .panel {
+      position: relative; z-index: 1;
+      width: 100%; max-width: 560px;
+      background: var(--card);
+      border: 1px solid var(--line-bright);
+      border-radius: var(--radius-lg);
+      padding: 44px 40px 40px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(10,26,38,0.08);
+      opacity: 0; transform: translateY(16px);
+      animation: panelIn .6s var(--ease) forwards;
+    }
+    @keyframes panelIn { to { opacity: 1; transform: translateY(0); } }
+    .brand-logo-wrap { display: flex; justify-content: center; margin-bottom: 28px; }
+    .brand-logo {
+      width: 152px; height: auto; max-height: 42px; object-fit: contain;
+      filter: brightness(0) saturate(100%); opacity: .92;
+    }
+    .error-code {
+      font-family: var(--font-display); font-weight: 600;
+      font-size: clamp(64px, 14vw, 92px);
+      line-height: 1; letter-spacing: -0.02em;
+      background: linear-gradient(135deg, var(--amber-deep), var(--amber) 60%, #FFB89C);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      margin-bottom: 6px;
+    }
+    .error-eyebrow {
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--amber-deep);
+      margin-bottom: 14px;
+    }
+    .error-title {
+      font-family: var(--font-display); font-weight: 500;
+      font-size: 24px; color: var(--ink); letter-spacing: -0.01em;
+      margin-bottom: 10px;
+    }
+    .error-copy {
+      font-size: 14px; line-height: 1.65; color: var(--ink-soft);
+      max-width: 420px; margin: 0 auto 30px;
+    }
+    .error-copy strong { color: var(--ink); font-weight: 600; }
+    .action-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; flex-wrap: wrap; margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+      padding: 12px 22px; border-radius: var(--radius-sm);
+      font-family: var(--font-mono); font-size: 12px; font-weight: 500;
+      letter-spacing: 0.05em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer; border: 1.5px solid transparent;
+      transition: all .2s ease; white-space: nowrap;
+    }
+    .btn-solid {
+      background: var(--amber); border-color: var(--amber); color: #FDFBF5;
+    }
+    .btn-solid:hover { background: var(--amber-deep); border-color: var(--amber-deep); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(228,85,58,0.25); }
+    .btn-outline {
+      background: none; border-color: var(--line-bright); color: var(--ink-soft);
+    }
+    .btn-outline:hover { border-color: var(--indigo-deep); color: var(--ink); transform: translateY(-2px); }
+    .divider-line {
+      height: 1px; background: var(--line); border: none; margin: 0 0 22px;
+    }
+    .helper-row {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 10.5px; color: var(--ink-faintest);
+      letter-spacing: 0.04em;
+    }
+    .helper-row i { color: var(--green-bright); font-size: 10px; }
+    @media (max-width: 480px) {
+      .panel { padding: 34px 22px 28px; }
+      .btn { width: 100%; }
+      .action-row { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="classification-bar">Stackly Learning Platform</div>
+  <div class="page-root">
+    <div class="panel">
+      <div class="brand-logo-wrap">
+        <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo">
+      </div>
+      <div class="error-eyebrow">Page Not Found</div>
+      <div class="error-code">404</div>
+      <h1 class="error-title">This page didn't make the cohort.</h1>
+      <p class="error-copy">
+        The page you're looking for may have been moved, renamed, or hasn't been built yet.
+        <strong>Your tracks, checkpoints, and mentors</strong> are all still exactly where you left them.
+      </p>
+      <div class="action-row">
+        <button class="btn btn-outline" id="go-back-btn">
+          <i class="fa-solid fa-arrow-left"></i> Go Back
+        </button>
+        <a href="../index.html" class="btn btn-solid" id="go-home-btn">
+          <i class="fa-solid fa-house"></i> Back to Home
+        </a>
+      </div>
+      <hr class="divider-line">
+      <div class="helper-row">
+        <i class="fa-solid fa-circle"></i>
+        <span>Stackly Learning Platform · Cohort Access</span>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.getElementById('go-back-btn').addEventListener('click', function () {
+      window.history.back();
+    });
+  </script>
+</body>
+</html>

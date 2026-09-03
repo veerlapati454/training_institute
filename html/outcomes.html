@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Outcomes — Stackly</title>
+<meta name="description" content="Stackly placement outcomes by track: job placement rates, time to offer, starting salaries, hiring partners, alumni stories, and exactly how we calculate every number on this page.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="../css/outcomes.css">
+</head>
+<body>
+
+<div class="scroll-progress-container"><div class="scroll-progress-bar" id="page-scroll-indicator"></div></div>
+
+<div class="site-wrapper">
+
+  <!-- ===== Header ===== -->
+  <header class="navbar-wrapper" id="navbar-wrapper">
+    <div class="navbar-pill">
+      <a href="index.html#home" class="navbar-brand" aria-label="Stackly — Home">
+        <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img">
+      </a>
+
+      <nav class="navbar-links" id="main-nav-links">
+        <a href="../index.html" class="nav-item">Home</a>
+        <a href="tracks.html" class="nav-item">Tracks</a>
+        <a href="how it works.html" class="nav-item">How it works</a>
+        <a href="./faculty.html" class="nav-item">Faculty</a>
+        <a href="./outcomes.html" class="nav-item active">Outcomes</a>
+        <a href="./contact.html" class="nav-item">Contact</a>
+        <div class="mobile-nav-actions">
+          <a href="./login.html" class="btn-book-mobile">Book a seat</a>
+        </div>
+      </nav>
+
+      <div class="navbar-actions">
+        <a href="./login.html" class="btn-book">Book a seat</a>
+        <button class="menu-hamburger" id="nav-menu-hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== 1. Page hero ===== -->
+  <section class="page-hero" id="top">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="../assets/cc8.webp" alt="">
+    </div>
+    <div class="page-hero-overlay" aria-hidden="true"></div>
+    <div class="page-hero-inner">
+      <span class="eyebrow light">THE RESULTS</span>
+      <h1 class="section-heading light">What happens to riders after the capstone</h1>
+      <p class="section-sub light">Placement rates, salaries, and time-to-offer, broken down by track — and exactly how we calculate each number, so you're not just taking our word for it.</p>
+      <div class="hero-buttons">
+        <a href="#tracks" class="btn-solid">See outcomes by track</a>
+        <a href="#method" class="btn-outline">How we measure this</a>
+      </div>
+      <div class="hero-headline-stat">Class of 2025 · <strong>89% placed within 6 months</strong></div>
+    </div>
+  </section>
+
+  <!-- ===== Sticky in-page sub-navigation ===== -->
+  <div class="subnav-wrap" id="subnav-wrap">
+    <nav class="subnav" id="subnav" aria-label="On this page">
+      <a href="#overview" class="subnav-pill">Overview</a>
+      <a href="#tracks" class="subnav-pill">By track</a>
+      <a href="#timeline" class="subnav-pill">Timeline</a>
+      <a href="#partners" class="subnav-pill">Partners</a>
+      <a href="#alumnus" class="subnav-pill">Spotlight</a>
+      <a href="#voices" class="subnav-pill">Alumni voices</a>
+      <a href="#method" class="subnav-pill">Methodology</a>
+      <a href="#faq" class="subnav-pill">FAQ</a>
+    </nav>
+  </div>
+
+  <!-- ===== 2. Overview ===== -->
+  <section class="overview-section" id="overview">
+    <div class="section-inner">
+      <div class="outcomes-photo-row">
+        <img src="../assets/cc2.webp" alt="A graduate working at a desk in their first role after Stackly">
+        <div class="outcomes-photo-note">
+          <p>"We track every graduate for a year, not just the ones who report back with good news. The number on this page is the honest one, not the flattering one."</p>
+          <span>— Stackly outcomes office</span>
+        </div>
+      </div>
+
+      <div class="overview-stats">
+        <div class="overview-stat">
+          <span class="overview-stat-num">89<span class="stat-suffix">%</span></span>
+          <p>Of the Class of 2025 placed in a full-time role within six months of their capstone</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">4.3<span class="stat-suffix"> mo</span></span>
+          <p>Median time from capstone presentation to a signed offer</p>
+        </div>
+        <div class="overview-stat">
+          <span class="overview-stat-num">$93<span class="stat-suffix">k</span></span>
+          <p>Median starting salary across all four tracks combined</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 3. Outcomes by track ===== -->
+  <section class="tracks-section" id="tracks">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BROKEN DOWN BY TRACK</span>
+        <h2 class="section-heading">Placement isn't the same across every track — here's the real spread</h2>
+        <p class="section-sub">Figures reflect the trailing twelve months across every graduating cohort in that track.</p>
+      </div>
+
+      <div class="track-rows">
+        <div class="track-row">
+          <div class="track-row-name">
+            <h3>Software Engineering</h3>
+            <span>SE-210 · 6 cohorts tracked</span>
+          </div>
+          <div class="track-bar-wrap">
+            <div class="track-bar-labels"><span>Placement rate</span><strong>91%</strong></div>
+            <div class="track-bar-track"><div class="track-bar-fill" data-fill="91"></div></div>
+          </div>
+          <div class="track-row-meta">
+            <span class="meta-val">$96k</span>
+            <span class="meta-label">median starting salary</span>
+          </div>
+        </div>
+
+        <div class="track-row">
+          <div class="track-row-name">
+            <h3>Data Science</h3>
+            <span>DS-310 · 5 cohorts tracked</span>
+          </div>
+          <div class="track-bar-wrap">
+            <div class="track-bar-labels"><span>Placement rate</span><strong>87%</strong></div>
+            <div class="track-bar-track"><div class="track-bar-fill" data-fill="87"></div></div>
+          </div>
+          <div class="track-row-meta">
+            <span class="meta-val">$99k</span>
+            <span class="meta-label">median starting salary</span>
+          </div>
+        </div>
+
+        <div class="track-row">
+          <div class="track-row-name">
+            <h3>Cloud &amp; DevOps</h3>
+            <span>CD-140 · 4 cohorts tracked</span>
+          </div>
+          <div class="track-bar-wrap">
+            <div class="track-bar-labels"><span>Placement rate</span><strong>90%</strong></div>
+            <div class="track-bar-track"><div class="track-bar-fill" data-fill="90"></div></div>
+          </div>
+          <div class="track-row-meta">
+            <span class="meta-val">$95k</span>
+            <span class="meta-label">median starting salary</span>
+          </div>
+        </div>
+
+        <div class="track-row">
+          <div class="track-row-name">
+            <h3>Product Design</h3>
+            <span>PD-180 · 4 cohorts tracked</span>
+          </div>
+          <div class="track-bar-wrap">
+            <div class="track-bar-labels"><span>Placement rate</span><strong>85%</strong></div>
+            <div class="track-bar-track"><div class="track-bar-fill" data-fill="85"></div></div>
+          </div>
+          <div class="track-row-meta">
+            <span class="meta-val">$88k</span>
+            <span class="meta-label">median starting salary</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 4. Timeline to placement ===== -->
+  <section class="timeline-section" id="timeline">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">AFTER THE CAPSTONE</span>
+        <h2 class="section-heading light">What the twelve months after graduation actually look like</h2>
+        <p class="section-sub light">Placement support doesn't stop at the capstone panel — it runs on this rough schedule for every graduate.</p>
+      </div>
+
+      <div class="timeline-steps">
+        <div class="timeline-step">
+          <span class="timeline-step-month">MONTH 0</span>
+          <h3>Capstone &amp; resume lock-in</h3>
+          <p>Your capstone becomes the anchor project on a resume built and reviewed with a career coach before you start applying anywhere.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-month">MONTHS 1–2</span>
+          <h3>Warm introductions first</h3>
+          <p>Referrals into the hiring-partner network go out before generic applications — warm intros convert at a meaningfully higher rate.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-month">MONTHS 2–4</span>
+          <h3>Mock interviews &amp; offer review</h3>
+          <p>Weekly mock interviews with your coach, plus a second opinion from your mentor before you accept or negotiate any offer.</p>
+        </div>
+        <div class="timeline-step">
+          <span class="timeline-step-month">MONTHS 4–12</span>
+          <h3>Still tracked, still supported</h3>
+          <p>Graduates who haven't placed by month four get triaged into a focused catch-up track with extra coaching hours, not left to it alone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 5. Hiring partners ===== -->
+  <section class="partners-section" id="partners">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">WHO'S HIRING FROM HERE</span>
+        <h2 class="section-heading">Companies that actively recruit from Stackly cohorts</h2>
+        <p class="section-sub">Several of these are also where our mentors work full time — the referral pipeline runs both directions.</p>
+      </div>
+
+      <div class="partners-grid">
+        <div class="partner-card">
+          <span class="partner-mark">NP</span>
+          <h4>Northline Payments</h4>
+          <p>Fintech · hires from Software Engineering</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">CA</span>
+          <h4>Cortex Analytics</h4>
+          <p>Applied ML · hires from Data Science</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">FC</span>
+          <h4>Ferro Cloud Systems</h4>
+          <p>Infrastructure · hires from Cloud &amp; DevOps</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">HS</span>
+          <h4>Halyard Studio</h4>
+          <p>Product design agency · hires from Product Design</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">MC</span>
+          <h4>Marlow Commerce</h4>
+          <p>E-commerce platform · hires from Software Engineering</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">BN</span>
+          <h4>Basalt Networks</h4>
+          <p>Cloud infrastructure · hires from Cloud &amp; DevOps</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">VH</span>
+          <h4>Verdant Health</h4>
+          <p>Health-tech · hires from Data Science</p>
+        </div>
+        <div class="partner-card">
+          <span class="partner-mark">+108</span>
+          <h4>Other partners</h4>
+          <p>Across fintech, retail, healthcare, and early-stage startups</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 6. Alumni spotlight ===== -->
+  <section class="alumnus-section" id="alumnus">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">ALUMNI SPOTLIGHT</span>
+        <h2 class="section-heading">One graduate's path from checkpoint to offer</h2>
+      </div>
+      <div class="mentor-card">
+        <div class="mentor-media">
+          <img src="../assets/cc1.webp" alt="Portrait of Dana Whitcombe">
+        </div>
+        <div>
+          <p class="mentor-quote">"I switched out of hospitality with zero engineering background. What actually got me hired wasn't the syllabus — it was having a mentor who reviewed my work like a teammate for eight straight months."</p>
+          <p class="mentor-name">Dana Whitcombe</p>
+          <p class="mentor-role">Software Engineer, Marlow Commerce · SE-210, Class of 2025</p>
+
+          <div class="mentor-meta">
+            <div class="mentor-meta-item"><span>Track</span><strong>Software Engineering</strong></div>
+            <div class="mentor-meta-item"><span>Time to offer</span><strong>3.5 months</strong></div>
+            <div class="mentor-meta-item"><span>Prior field</span><strong>Hospitality management</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 7. Alumni voices ===== -->
+  <section class="voices-section" id="voices">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">MORE THAN ONE STORY</span>
+        <h2 class="section-heading light">A few more voices from recent cohorts</h2>
+        <p class="section-sub light">Short, unedited reflections pulled from our post-placement graduate survey.</p>
+      </div>
+
+      <div class="voices-grid">
+        <div class="voice-card">
+          <div class="voice-person">
+            <div class="voice-photo"><img src="../assets/cc10.webp" alt="Portrait of Renee Okafor"></div>
+            <div>
+              <h4>Renee Okafor</h4>
+              <span>ML Engineer, Verdant Health</span>
+            </div>
+          </div>
+          <p>"My mentor pushed back on a model I was proud of and was right to. That review taught me more than the whole foundations sprint."</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-person">
+            <div class="voice-photo"><img src="../assets/cc16.webp" alt="Portrait of Tomas Ferreira"></div>
+            <div>
+              <h4>Tomas Ferreira</h4>
+              <span>Site Reliability Engineer, Basalt Networks</span>
+            </div>
+          </div>
+          <p>"I fell behind in week five. The catch-up week meant I didn't spiral — I actually finished ahead of where I'd have been otherwise."</p>
+        </div>
+        <div class="voice-card">
+          <div class="voice-person">
+            <div class="voice-photo"><img src="../assets/cc20.webp" alt="Portrait of Priya Sundaram"></div>
+            <div>
+              <h4>Priya Sundaram</h4>
+              <span>Product Designer, Halyard Studio</span>
+            </div>
+          </div>
+          <p>"The panel defense was nerve-wracking, but it's exactly what my first design review at work felt like. Nothing about the job surprised me."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 8. Methodology ===== -->
+  <section class="method-section" id="method">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">HOW WE CALCULATE THIS</span>
+        <h2 class="section-heading">The numbers on this page, and exactly what's behind them</h2>
+        <p class="section-sub">We'd rather you trust these figures because you can see how they're built, not because we ask you to.</p>
+      </div>
+
+      <div class="method-grid">
+        <div class="method-card">
+          <span class="method-icon"><i class="fa-solid fa-calendar-check"></i></span>
+          <h3>Six-month reporting window</h3>
+          <p>"Placed" means a full-time or equivalent-hours role, confirmed within six months of a graduate's capstone date — not lifetime placement.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon"><i class="fa-solid fa-file-signature"></i></span>
+          <h3>Verified, not just claimed</h3>
+          <p>Every placement is confirmed against an offer letter, a start-date confirmation, or a verifiable LinkedIn update — self-reports alone don't count.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon"><i class="fa-solid fa-users"></i></span>
+          <h3>91% survey response rate</h3>
+          <p>Placement figures reflect the graduates we could confirm status for. Non-respondents are noted separately, not folded into the "placed" total.</p>
+        </div>
+        <div class="method-card">
+          <span class="method-icon"><i class="fa-solid fa-circle-info"></i></span>
+          <h3>What's excluded</h3>
+          <p>Freelance, unpaid, and self-employment outcomes are tracked separately and never counted toward the placement rate shown here.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 9. FAQ ===== -->
+  <section class="faq-section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="eyebrow">BEFORE YOU ENROLL</span>
+        <h2 class="section-heading">Questions about these numbers</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What exactly counts as a "placement"?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>A full-time or equivalent-hours role in or adjacent to your track, confirmed by an offer letter or start-date documentation, within six months of your capstone. Career-adjacent roles count; unrelated jobs taken to cover bills while still job-searching don't.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is the salary data self-reported?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Graduates report their own starting salary, but we cross-check a sample against public offer bands and recruiter data each term. Figures shown are medians, which are less skewed by a handful of outlier offers than an average would be.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>What happens if I don't get placed within six months?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Career coaching and hiring-partner referrals continue through month twelve regardless. You're moved into a more intensive catch-up track around month four rather than left to search alone.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do these numbers include people who change careers into tech?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes — roughly six in ten graduates each cycle are career changers, and their placement outcomes are folded into the same figures shown here rather than reported separately.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            <span>Why do placement rates differ by track?</span>
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Mostly hiring-market conditions in each field rather than program quality — Product Design roles are simply scarcer this year than Software Engineering roles. We report the real spread instead of blending it into one flattering average.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA banner ===== -->
+  <section class="cta-banner-section">
+    <div class="cta-card">
+      <img class="cta-bg-img" src="../assets/cc11.webp" alt="">
+      <h2 class="cta-heading">Seen where graduates land.<br>Ready to see who'd be reviewing your work?</h2>
+      <a href="faculty.html" class="cta-btn">Meet the faculty</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <div class="footer-col footer-brand-col">
+        <a href="index.html#home" class="footer-logo" aria-label="Stackly — Home">
+          <img src="../assets/stackly_logo.webp" alt="Stackly" class="brand-logo-img footer-logo-img">
+        </a>
+        <p class="footer-tagline">A cohort-based training institute running practitioner-led programs since 2010, with placement support that doesn't stop at graduation.</p>
+        <div class="footer-contact">
+          <a href="./404.html"><i class="fa-solid fa-phone"></i> +91 98765 43210</a>
+          <a href="./404.html"><i class="fa-solid fa-envelope"></i> admissions@stackly.edu</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <nav class="footer-nav">
+          <a href="../index.html">Home</a>
+          <a href="tracks.html">Tracks</a>
+          <a href="how it works.html">How it works</a>
+          <a href="./faculty.html">Faculty</a>
+          <a href="./outcomes.html">Outcomes</a>
+          <a href="./contact.html">Contact</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <h4>Campus</h4>
+        <address>
+          MMR Complex, Periyakollappatty<br>
+          Chinna Thirupathi, Tamil Nadu 636008
+        </address>
+        <p class="footer-hours">Mon–Sat · 9am – 7pm</p>
+      </div>
+      <div class="footer-col footer-social-col">
+        <h4>Follow</h4>
+        <div class="footer-social-icons">
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="404.html" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="404.html" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Stackly Institute of Professional Training. All rights reserved.</p>
+      <div class="footer-bottom-links"><a href="404.html">Privacy Policy</a><span>·</span><a href="404.html">Terms</a></div>
+    </div>
+  </footer>
+
+</div>
+
+<button id="back-to-top" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+</button>
+
+<script src="../js/outcomes.js"></script>
+</body>
+</html>

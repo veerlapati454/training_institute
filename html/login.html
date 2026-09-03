@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sign in — Stackly</title>
+<meta name="description" content="Sign in to Stackly — your student dashboard for courses and progress, or the faculty portal for cohorts and grading.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{
+  --indigo-deep:#0A1A26;
+  --indigo-mid:#15303F;
+  --indigo-line:rgba(246,242,234,.14);
+
+  --paper:#F6F2EA;
+  --card:#FFFFFF;
+
+  --ink:#16232C;
+  --ink-soft:#5C6B70;
+  --ink-faint:#8E9CA0;
+  --line:rgba(22,35,44,.13);
+
+  --amber:#FF7A59;
+  --amber-deep:#E4553A;
+  --amber-soft:#FFE3D9;
+
+  --green:#2E8F79;
+  --green-soft:#DBF0EA;
+  --red:#C1402F;
+
+  --font-display:'Fraunces', serif;
+  --font-body:'Inter', sans-serif;
+  --font-mono:'JetBrains Mono', monospace;
+
+  --ease:cubic-bezier(.19,1,.22,1);
+  --brand-w:clamp(360px, 39vw, 540px);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{overflow-x:hidden;}
+body{
+  font-family:var(--font-body);background:var(--paper);color:var(--ink);
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;font-size:16px;line-height:1.55;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--amber-deep);outline-offset:3px;border-radius:4px;}
+
+/* ============ SPLIT SHELL ============ */
+.shell{min-height:100vh;}
+
+/* ---------- LEFT: brand / boarding board ---------- */
+/* Fixed to the viewport so it always fills exactly 100vh, however long the
+   right-hand form gets. overflow-y:auto (instead of hidden) means that on
+   short viewports the board/footline scroll into view internally instead
+   of being clipped off the bottom. */
+.brand-panel{
+  position:fixed;top:0;left:0;bottom:0;width:var(--brand-w);
+  overflow-y:auto;overflow-x:hidden;
+  background:var(--indigo-deep);color:var(--paper);
+  display:flex;flex-direction:column;
+  padding:44px 44px 36px;
+  box-shadow:0 0 0 1px rgba(0,0,0,.08);
+  scrollbar-width:none; /* firefox */
+}
+.brand-panel::-webkit-scrollbar{ display:none; } /* chrome/safari — decorative panel, wheel/touch scroll still works */
+.brand-grid-bg{
+  position:absolute;inset:0;
+  background-image:linear-gradient(var(--indigo-line) 1px,transparent 1px),linear-gradient(90deg,var(--indigo-line) 1px,transparent 1px);
+  background-size:52px 52px;
+  mask-image:radial-gradient(ellipse 75% 65% at 30% 30%,#000 35%,transparent 88%);
+  pointer-events:none;
+}
+.brand-panel > *{position:relative;z-index:1;}
+.brand-panel-inner{
+  display:flex;flex-direction:column;min-height:100%;flex:1;
+}
+
+.logo-slot{
+  width:168px;height:56px;
+  display:flex;align-items:center;justify-content:flex-start;gap:9px;
+  font-family:var(--font-mono);font-size:.72rem;letter-spacing:.03em;color:rgba(246,242,234,.5);
+  flex-shrink:0;
+}
+.logo-slot i{font-size:.8rem;color:rgba(246,242,234,.4);}
+
+.back-home{
+  display:inline-flex;align-items:center;gap:8px;color:rgba(246,242,234,.55);
+  text-decoration:none;font-size:.82rem;letter-spacing:.02em;margin-bottom:22px;
+  transition:color .2s ease,gap .2s ease;flex-shrink:0;
+}
+.back-home:hover{color:var(--paper);gap:12px;}
+
+.brand-copy{max-width:30ch;margin-top:auto;padding-top:56px;flex-shrink:0;}
+.brand-eyebrow{
+  display:inline-flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:.72rem;font-weight:600;
+  color:var(--amber);margin-bottom:20px;
+}
+.brand-eyebrow::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--amber);flex-shrink:0;}
+.brand-heading{font-family:var(--font-display);font-weight:600;font-size:clamp(1.7rem,2.4vw,2.3rem);line-height:1.18;margin-bottom:14px;}
+.brand-desc{font-size:.95rem;color:rgba(246,242,234,.6);line-height:1.7;max-width:34ch;}
+
+.board{
+  margin-top:36px;background:var(--indigo-mid);border:1px solid rgba(255,122,89,.18);border-radius:12px;
+  padding:20px 20px 14px;flex-shrink:0;
+}
+.board-head{
+  display:grid;grid-template-columns:.75fr 1.35fr .9fr;font-family:var(--font-mono);font-size:.63rem;
+  letter-spacing:.06em;color:rgba(246,242,234,.4);padding-bottom:10px;border-bottom:1px solid rgba(246,242,234,.1);margin-bottom:4px;
+}
+.board-list{list-style:none;}
+.board-list li{
+  display:grid;grid-template-columns:.75fr 1.35fr .9fr;align-items:center;
+  padding:11px 0;border-bottom:1px dashed rgba(246,242,234,.08);
+}
+.board-list li:last-child{border-bottom:none;}
+.b-code{font-family:var(--font-mono);font-weight:600;color:var(--amber);font-size:.82rem;}
+.b-dest{font-size:.82rem;color:var(--paper);}
+.b-status{font-family:var(--font-mono);font-size:.6rem;letter-spacing:.03em;padding:3px 8px;border-radius:3px;justify-self:start;}
+.status-open{background:var(--green-soft);color:var(--green);}
+.status-low{background:var(--amber-soft);color:var(--amber-deep);}
+.board-foot{font-family:var(--font-mono);font-size:.63rem;color:rgba(246,242,234,.38);padding-top:10px;margin-top:2px;}
+
+.brand-footline{
+  font-family:var(--font-mono);font-size:.7rem;color:rgba(246,242,234,.35);
+  display:flex;align-items:center;gap:9px;margin-top:32px;flex-shrink:0;
+}
+.brand-footline i{color:var(--green);}
+
+/* ---------- RIGHT: auth ---------- */
+.auth-panel{
+  margin-left:var(--brand-w);
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:64px 48px;
+}
+.auth-shell{width:100%;max-width:420px;}
+
+.role-tabs{
+  display:flex;gap:3px;margin-bottom:22px;
+  background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px;
+}
+.role-tab{
+  flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+  background:transparent;border:none;border-radius:8px;padding:10px 14px;
+  font-family:var(--font-body);font-size:.87rem;font-weight:600;color:var(--ink-soft);
+  transition:color .2s ease,background .2s ease,box-shadow .2s ease;
+}
+.role-tab i{font-size:.82rem;opacity:.7;}
+.role-tab:hover{color:var(--ink);}
+.role-tab.active{color:var(--paper);background:var(--indigo-deep);box-shadow:0 6px 14px rgba(10,26,38,.22);}
+.role-tab.active i{opacity:1;color:var(--amber);}
+
+.ticket-card{
+  background:var(--card);border-radius:20px;box-shadow:0 30px 70px rgba(12,15,39,.1);
+  overflow:hidden;border:1px solid var(--line);
+}
+.ticket-top{padding:32px 34px 8px;}
+.ticket-heading{font-family:var(--font-display);font-size:1.5rem;font-weight:600;color:var(--ink);margin-bottom:6px;}
+.ticket-lede{font-size:.87rem;color:var(--ink-soft);margin-bottom:24px;line-height:1.6;}
+
+.role-panel{display:none;}
+.role-panel.active{display:block;}
+
+.auth-form{display:flex;flex-direction:column;gap:16px;}
+.field{display:flex;flex-direction:column;gap:7px;}
+.field label{font-family:var(--font-mono);font-size:.72rem;font-weight:600;letter-spacing:.03em;color:var(--ink-soft);}
+.field input{
+  font-family:var(--font-body);font-size:.94rem;color:var(--ink);background:var(--paper);
+  border:1px solid var(--line);border-radius:8px;padding:12px 14px;width:100%;
+  transition:border-color .2s ease,box-shadow .2s ease,background .2s ease;
+}
+.field input:focus{outline:none;border-color:var(--amber-deep);background:var(--card);box-shadow:0 0 0 3px rgba(228,85,58,.1);}
+.field-error{font-family:var(--font-mono);font-size:.75rem;color:var(--red);min-height:0;display:none;}
+.field.invalid input{border-color:var(--red);box-shadow:0 0 0 3px rgba(193,64,47,.09);}
+.field.invalid .field-error{display:block;}
+.field.valid input{border-color:var(--green);}
+
+.pw-wrap{position:relative;display:flex;align-items:center;}
+.pw-wrap input{padding-right:42px;}
+.pw-toggle{
+  position:absolute;right:5px;background:none;border:none;cursor:pointer;width:32px;height:32px;
+  display:flex;align-items:center;justify-content:center;color:var(--ink-soft);border-radius:6px;
+  transition:color .2s ease,background .2s ease;
+}
+.pw-toggle:hover{color:var(--amber-deep);background:var(--paper);}
+input[type="password"]::-ms-reveal,input[type="password"]::-ms-clear{display:none;}
+input::-webkit-credentials-auto-fill-button,input::-webkit-strong-password-auto-fill-button{
+  display:none !important;visibility:hidden;pointer-events:none;position:absolute;right:0;
+}
+
+.row-between{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;}
+.check-field{display:inline-flex;align-items:center;gap:8px;font-size:.84rem;color:var(--ink-soft);cursor:pointer;}
+.check-field input{accent-color:var(--amber-deep);width:15px;height:15px;cursor:pointer;}
+.forgot-link{font-size:.84rem;color:var(--amber-deep);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s ease;}
+.forgot-link:hover{border-color:var(--amber-deep);}
+
+.submit-btn{
+  width:100%;justify-content:center;display:inline-flex;align-items:center;gap:8px;
+  background:var(--indigo-deep);color:var(--paper);border:none;border-radius:8px;
+  font-family:var(--font-body);font-weight:700;font-size:.94rem;padding:14px 22px;margin-top:2px;
+  cursor:pointer;transition:background .2s ease,transform .2s ease;
+}
+.submit-btn:hover{background:var(--amber-deep);transform:translateY(-1px);}
+.submit-btn i{transition:transform .2s ease;}
+.submit-btn:hover i{transform:translateX(3px);}
+
+.register-link{
+  width:100%;margin-top:10px;text-decoration:none;box-sizing:border-box;text-align:center;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;background:transparent;color:var(--ink);
+  border:1px solid var(--line);border-radius:8px;font-size:.87rem;font-weight:600;padding:12px 22px;
+  transition:border-color .2s ease,background .2s ease;
+}
+.register-link:hover{border-color:var(--amber-deep);background:var(--paper);}
+
+.form-status{
+  font-family:var(--font-mono);font-size:.82rem;color:var(--green);min-height:1.2em;margin:12px 0 0;
+  opacity:0;transform:translateY(-4px);transition:opacity .3s ease,transform .3s ease;text-align:center;
+}
+.form-status.visible{opacity:1;transform:translateY(0);}
+.form-status.error{color:var(--red);}
+
+.ticket-tear{
+  position:relative;height:1px;margin:26px 0 0;
+  background-image:repeating-linear-gradient(90deg,var(--line) 0 8px,transparent 8px 16px);
+}
+.ticket-tear::before,.ticket-tear::after{
+  content:'';position:absolute;top:-11px;width:22px;height:22px;border-radius:50%;background:var(--paper);
+}
+.ticket-tear::before{left:-34px;}
+.ticket-tear::after{right:-34px;}
+
+.ticket-bottom{padding:22px 34px 30px;}
+.divider{display:flex;align-items:center;gap:12px;margin:0 0 16px;font-family:var(--font-mono);font-size:.72rem;color:var(--ink-faint);letter-spacing:.03em;}
+.divider::before,.divider::after{content:"";flex:1;height:1px;background:var(--line);}
+
+.sso-row{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:12px;}
+.sso-btn{
+  width:100%;justify-content:center;display:inline-flex;align-items:center;gap:8px;padding:11px 8px;
+  background:var(--paper);border:1px solid var(--line);border-radius:8px;color:var(--ink);
+  font-size:.79rem;font-weight:500;cursor:pointer;transition:border-color .2s ease,transform .2s ease,background .2s ease;
+}
+.sso-btn i{color:var(--ink-soft);font-size:.9rem;}
+.sso-btn:hover{transform:translateY(-1px);background:var(--card);}
+.sso-btn[data-provider="google"]:hover{border-color:#4285F4;color:#4285F4;}
+.sso-btn[data-provider="google"]:hover i{color:#4285F4;}
+.sso-btn[data-provider="microsoft"]:hover{border-color:#00A4EF;color:#00A4EF;}
+.sso-btn[data-provider="microsoft"]:hover i{color:#00A4EF;}
+.sso-btn[data-provider="apple"]:hover{border-color:var(--ink);color:var(--ink);}
+.sso-wide{
+  width:100%;justify-content:center;display:inline-flex;align-items:center;gap:8px;padding:12px 8px;
+  background:var(--paper);border:1px solid var(--line);border-radius:8px;color:var(--ink);
+  font-size:.84rem;font-weight:500;cursor:pointer;transition:border-color .2s ease,color .2s ease;
+}
+.sso-wide i{color:var(--ink-soft);}
+.sso-wide:hover{border-color:var(--amber-deep);color:var(--amber-deep);}
+.sso-wide:hover i{color:var(--amber-deep);}
+
+.panel-footnote{margin:20px 0 0;font-size:.84rem;color:var(--ink-soft);text-align:center;line-height:1.55;}
+.panel-footnote a{color:var(--amber-deep);text-decoration:none;border-bottom:1px solid transparent;}
+.panel-footnote a:hover{border-bottom-color:var(--amber-deep);}
+
+.legal-note{
+  display:flex;align-items:flex-start;gap:9px;margin:22px 2px 0;font-family:var(--font-mono);
+  font-size:.74rem;line-height:1.6;color:var(--ink-faint);
+}
+.legal-note i{color:var(--green);margin-top:3px;flex-shrink:0;}
+
+[data-auth-el]{opacity:0;}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:960px){
+  .brand-panel{position:relative;top:auto;left:auto;bottom:auto;width:100%;height:auto;min-height:0;padding:32px 24px 40px;overflow-y:visible;}
+  .brand-panel-inner{min-height:0;}
+  .brand-copy{padding-top:32px;}
+  .board{display:none;}
+  .auth-panel{margin-left:0;min-height:0;padding:0 20px 72px;}
+}
+@media (max-width:560px){
+  .brand-panel{padding:28px 20px 34px;}
+  .logo-slot{width:140px;height:48px;}
+  .ticket-top{padding:26px 22px 6px;}
+  .ticket-bottom{padding:18px 22px 26px;}
+  .ticket-tear::before{left:-1px;transform:translateX(-50%);}
+  .ticket-tear::after{right:-1px;transform:translateX(50%);}
+  .sso-row{grid-template-columns:1fr;}
+  .row-between{flex-direction:column;align-items:flex-start;gap:10px;}
+}
+/* Short viewports (laptops with small height, browser zoom, etc.): tighten
+   the brand panel's own spacing before relying on internal scroll. */
+@media (min-width:961px) and (max-height:760px){
+  .brand-copy{padding-top:28px;}
+  .board{margin-top:22px;padding:16px 16px 10px;}
+  .board-list li{padding:8px 0;}
+  .brand-footline{margin-top:20px;}
+}
+@media (prefers-reduced-motion: reduce){
+  [data-auth-el]{opacity:1 !important;transform:none !important;}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <!-- ===== LEFT: brand panel ===== -->
+  <aside class="brand-panel">
+    <div class="brand-grid-bg" aria-hidden="true"></div>
+
+    <div class="brand-panel-inner">
+      <a href="../index.html" class="back-home"><i class="fa-solid fa-arrow-left"></i> Back to home</a>
+
+      <div class="logo-slot" aria-label="Logo placeholder">
+        <img src="../assets/stackly_logo.webp" alt="">
+      </div>
+
+      <div class="brand-copy">
+        <span class="brand-eyebrow">Gate access · member sign-in</span>
+        <h1 class="brand-heading">Your next session is one sign-in away.</h1>
+        <p class="brand-desc">Reach your courses, project reviews and placement updates as a student, or manage a cohort as faculty.</p>
+
+        <div class="board" aria-label="Sample departure board">
+          <div class="board-head"><span>ROUTE</span><span>DESTINATION</span><span>STATUS</span></div>
+          <ul class="board-list">
+            <li><span class="b-code">WD‑204</span><span class="b-dest">Frontend Engineer</span><span class="b-status status-open">BOARDING</span></li>
+            <li><span class="b-code">DS‑310</span><span class="b-dest">Data Analyst</span><span class="b-status status-low">FEW SEATS</span></li>
+            <li><span class="b-code">CC‑402</span><span class="b-dest">Cloud Engineer</span><span class="b-status status-open">BOARDING</span></li>
+          </ul>
+          <div class="board-foot">Board updates every cohort · <span id="hero-clock">--:--</span> IST</div>
+        </div>
+      </div>
+
+      <div class="brand-footline"><i class="fa-solid fa-shield-halved"></i> Sign-ins are logged for account security</div>
+    </div>
+  </aside>
+
+  <!-- ===== RIGHT: sign-in ===== -->
+  <main class="auth-panel">
+    <div class="auth-shell">
+
+      <div class="role-tabs" role="tablist" aria-label="Choose account type" data-auth-el>
+        <button class="role-tab active" id="tab-student" role="tab" aria-selected="true" aria-controls="panel-student" data-role="student">
+          <i class="fa-solid fa-ticket"></i> Student
+        </button>
+        <button class="role-tab" id="tab-faculty" role="tab" aria-selected="false" aria-controls="panel-faculty" data-role="faculty">
+          <i class="fa-solid fa-chalkboard-user"></i> Faculty
+        </button>
+      </div>
+
+      <div class="ticket-card" data-auth-el>
+
+        <!-- Student panel -->
+        <div class="role-panel active" id="panel-student" role="tabpanel" aria-labelledby="tab-student">
+          <div class="ticket-top">
+            <h2 class="ticket-heading">Welcome back</h2>
+            <p class="ticket-lede">For students enrolled in a Stackly track — reach your courses, project reviews and cohort updates.</p>
+
+            <form class="auth-form" id="student-login-form" novalidate>
+              <div class="field">
+                <label for="student-email">Email</label>
+                <input type="email" id="student-email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <span class="field-error" id="student-email-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="student-password">Password</label>
+                <div class="pw-wrap">
+                  <input type="password" id="student-password" name="password" placeholder="••••••••••" autocomplete="current-password" minlength="8" required>
+                  <button type="button" class="pw-toggle" data-target="student-password" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <span class="field-error" id="student-password-error" role="alert"></span>
+              </div>
+
+              <div class="row-between">
+                <label class="check-field">
+                  <input type="checkbox" id="student-remember" name="remember">
+                  <span>Remember this device</span>
+                </label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="submit-btn">Board <i class="fa-solid fa-arrow-right"></i></button>
+              <a href="./signup.html" class="register-link">Create an account</a>
+              <p class="form-status" id="student-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="ticket-tear"></div>
+
+          <div class="ticket-bottom">
+            <div class="divider">or continue with</div>
+            <div class="sso-row">
+              <button type="button" class="sso-btn" data-provider="google"><i class="fa-brands fa-google"></i>Google</button>
+              <button type="button" class="sso-btn" data-provider="microsoft"><i class="fa-brands fa-microsoft"></i>Microsoft</button>
+              <button type="button" class="sso-btn" data-provider="apple"><i class="fa-brands fa-apple"></i>Apple</button>
+            </div>
+            <p class="panel-footnote">New to Stackly? <a href="./signup.html">Sign up</a> and reserve a seat.</p>
+          </div>
+        </div>
+
+        <!-- Faculty panel -->
+        <div class="role-panel" id="panel-faculty" role="tabpanel" aria-labelledby="tab-faculty" hidden>
+          <div class="ticket-top">
+            <h2 class="ticket-heading">Welcome back</h2>
+            <p class="ticket-lede">For instructors and staff managing cohorts, project reviews and placement.</p>
+
+            <form class="auth-form" id="faculty-login-form" novalidate>
+              <div class="field">
+                <label for="faculty-email">Work email</label>
+                <input type="email" id="faculty-email" name="email" placeholder="jordan@stackly.edu" autocomplete="email" required>
+                <span class="field-error" id="faculty-email-error" role="alert"></span>
+              </div>
+              <div class="field">
+                <label for="faculty-password">Password</label>
+                <div class="pw-wrap">
+                  <input type="password" id="faculty-password" name="password" placeholder="••••••••••" autocomplete="current-password" minlength="8" required>
+                  <button type="button" class="pw-toggle" data-target="faculty-password" aria-label="Show password"><i class="fa-solid fa-eye"></i></button>
+                </div>
+                <span class="field-error" id="faculty-password-error" role="alert"></span>
+              </div>
+
+              <div class="row-between">
+                <label class="check-field">
+                  <input type="checkbox" id="faculty-remember" name="remember">
+                  <span>Remember this device</span>
+                </label>
+                <a href="#" class="forgot-link">Forgot password?</a>
+              </div>
+
+              <button type="submit" class="submit-btn">Board <i class="fa-solid fa-arrow-right"></i></button>
+              <a href="./signup.html" class="register-link">Create an account</a>
+              <p class="form-status" id="faculty-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+
+          <div class="ticket-tear"></div>
+
+          <div class="ticket-bottom">
+            <div class="divider">or continue with</div>
+            <div class="sso-row">
+              <button type="button" class="sso-btn" data-provider="google"><i class="fa-brands fa-google"></i>Google</button>
+              <button type="button" class="sso-btn" data-provider="microsoft"><i class="fa-brands fa-microsoft"></i>Microsoft</button>
+              <button type="button" class="sso-btn" data-provider="apple"><i class="fa-brands fa-apple"></i>Apple</button>
+            </div>
+            <button type="button" class="sso-wide" data-provider="institute"><i class="fa-solid fa-building-shield"></i>Sign in with Stackly SSO</button>
+            <p class="panel-footnote">Joining faculty? <a href="./signup.html">Sign up</a> to set up your account.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <p class="legal-note" data-auth-el><i class="fa-solid fa-shield-halved"></i>Every sign-in is logged for account security. View activity anytime from your account settings.</p>
+    </div>
+  </main>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  const $  = (sel, ctx) => (ctx || document).querySelector(sel);
+  const $$ = (sel, ctx) => Array.from((ctx || document).querySelectorAll(sel));
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGSAP = typeof window.gsap !== 'undefined';
+
+  /* ---------- Entrance for the auth card ---------- */
+  const introEls = $$('[data-auth-el]');
+  if (introEls.length) {
+    if (!hasGSAP || prefersReducedMotion) {
+      introEls.forEach(el => el.style.opacity = 1);
+    } else {
+      gsap.set(introEls, { opacity: 0, y: 14 });
+      gsap.to(introEls, { opacity: 1, y: 0, duration: .7, stagger: .1, ease: 'power3.out', delay: .15 });
+    }
+  }
+
+  /* ---------- Role tabs ---------- */
+  const roleTabs = $$('.role-tab');
+  const rolePanels = { student: $('#panel-student'), faculty: $('#panel-faculty') };
+
+  function activateRole(role) {
+    roleTabs.forEach(tab => {
+      const isMatch = tab.dataset.role === role;
+      tab.classList.toggle('active', isMatch);
+      tab.setAttribute('aria-selected', isMatch ? 'true' : 'false');
+    });
+    Object.keys(rolePanels).forEach(key => {
+      const panel = rolePanels[key];
+      if (!panel) return;
+      panel.hidden = key !== role;
+      panel.classList.toggle('active', key === role);
+    });
+  }
+  roleTabs.forEach(tab => tab.addEventListener('click', () => activateRole(tab.dataset.role)));
+
+  /* ---------- Password show/hide ---------- */
+  $$('.pw-toggle').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const input = $('#' + btn.getAttribute('data-target'));
+      if (!input) return;
+      const showing = input.type === 'text';
+      input.type = showing ? 'password' : 'text';
+      const icon = $('i', btn);
+      if (icon) icon.className = showing ? 'fa-solid fa-eye' : 'fa-solid fa-eye-slash';
+      btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+    });
+  });
+
+  /* ---------- Validation ---------- */
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[a-zA-Z]{2,}$/;
+  function fieldWrap(input) { return input.closest('.field'); }
+
+  function setFieldState(input, message) {
+    const wrap = fieldWrap(input);
+    const errorEl = $('#' + input.id + '-error');
+    if (message) {
+      wrap.classList.add('invalid'); wrap.classList.remove('valid');
+      if (errorEl) errorEl.textContent = message;
+      return false;
+    }
+    wrap.classList.remove('invalid');
+    if (input.value.trim()) wrap.classList.add('valid');
+    if (errorEl) errorEl.textContent = '';
+    return true;
+  }
+
+  function validateEmail(input) {
+    const v = input.value.trim();
+    if (!v) return setFieldState(input, 'Please enter your email.');
+    if (!EMAIL_RE.test(v)) return setFieldState(input, 'Enter a valid email address.');
+    return setFieldState(input, '');
+  }
+  function validateSecret(input, minLen, label) {
+    const v = input.value;
+    if (!v) return setFieldState(input, 'Please enter your ' + label + '.');
+    if (v.length < minLen) return setFieldState(input, label.charAt(0).toUpperCase() + label.slice(1) + ' must be at least ' + minLen + ' characters.');
+    return setFieldState(input, '');
+  }
+  function wireLiveValidation(input, validator) {
+    if (!input) return;
+    input.addEventListener('input', () => validator(input));
+    input.addEventListener('blur', () => validator(input));
+  }
+
+  /* ---------- Session helper ----------
+     localStorage.user            -> JSON string { email, role }
+     localStorage.isAuthenticated -> 'true'
+  ---------------------------------------- */
+  function persistSession(email, role) {
+    try {
+      localStorage.setItem('user', JSON.stringify({ email: email.trim(), role: role }));
+      localStorage.setItem('isAuthenticated', 'true');
+    } catch (err) {
+      console.warn('Stackly: could not persist session to localStorage', err);
+    }
+  }
+
+  function wireForm(formId, statusId, emailId, passwordId, role, redirectTo) {
+    const form = $('#' + formId);
+    const status = $('#' + statusId);
+    const email = $('#' + emailId);
+    const password = $('#' + passwordId);
+    if (!form || !status) return;
+
+    wireLiveValidation(email, validateEmail);
+    wireLiveValidation(password, (input) => validateSecret(input, 8, 'password'));
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailOk = validateEmail(email);
+      const passOk = validateSecret(password, 8, 'password');
+
+      if (!emailOk || !passOk) {
+        status.classList.add('visible', 'error');
+        status.textContent = 'Please fix the highlighted fields before signing in.';
+        (emailOk ? password : email).focus();
+        return;
+      }
+
+      status.classList.remove('error');
+      status.classList.add('visible');
+      status.textContent = "You're boarded — loading your board…";
+
+      persistSession(email.value, role);
+      setTimeout(() => { window.location.href = redirectTo; }, 600);
+    });
+  }
+
+  wireForm('student-login-form', 'student-status', 'student-email', 'student-password', 'student', './student-dashboard.html');
+  wireForm('faculty-login-form', 'faculty-status', 'faculty-email', 'faculty-password', 'faculty', './faculty-dashboard.html');
+
+  /* ---------- SSO buttons (cosmetic only, no backend in this build) ---------- */
+  $$('.sso-btn[data-provider], .sso-wide[data-provider]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const provider = btn.dataset.provider;
+      const label = provider.charAt(0).toUpperCase() + provider.slice(1);
+      const panel = btn.closest('.role-panel');
+      const status = panel ? $('.form-status', panel) : null;
+      if (status) {
+        status.classList.remove('error');
+        status.classList.add('visible');
+        status.textContent = provider === 'institute' ? 'Redirecting to your Stackly SSO…' : `Redirecting to ${label}…`;
+      }
+    });
+  });
+
+  /* ---------- Live IST clock on the board ---------- */
+  const heroClock = $('#hero-clock');
+  function updateClock() {
+    if (!heroClock) return;
+    const now = new Date();
+    const ist = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Kolkata' }));
+    const hh = String(ist.getHours()).padStart(2, '0');
+    const mm = String(ist.getMinutes()).padStart(2, '0');
+    heroClock.textContent = `${hh}:${mm}`;
+  }
+  updateClock();
+  setInterval(updateClock, 30000);
+
+});
+</script>
+</body>
+</html>
